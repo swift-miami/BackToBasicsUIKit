@@ -29,6 +29,8 @@
 		EF8F5C2822132CFB0017C9FF /* NilsonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF8F5C2622132CFB0017C9FF /* NilsonViewController.xib */; };
 		EF8F5C2B22132D120017C9FF /* JimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8F5C2922132D120017C9FF /* JimViewController.swift */; };
 		EF8F5C2C22132D120017C9FF /* JimViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF8F5C2A22132D120017C9FF /* JimViewController.xib */; };
+		EF8F5C2F22136EA90017C9FF /* PauloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8F5C2D22136EA90017C9FF /* PauloViewController.swift */; };
+		EF8F5C3022136EA90017C9FF /* PauloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF8F5C2E22136EA90017C9FF /* PauloViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		EF8F5C2622132CFB0017C9FF /* NilsonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NilsonViewController.xib; sourceTree = "<group>"; };
 		EF8F5C2922132D120017C9FF /* JimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JimViewController.swift; sourceTree = "<group>"; };
 		EF8F5C2A22132D120017C9FF /* JimViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JimViewController.xib; sourceTree = "<group>"; };
+		EF8F5C2D22136EA90017C9FF /* PauloViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauloViewController.swift; sourceTree = "<group>"; };
+		EF8F5C2E22136EA90017C9FF /* PauloViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PauloViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,26 +105,108 @@
 		EF8F5C08221329B50017C9FF /* Demo ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				EF8F5C312213765F0017C9FF /* Alejo */,
+				EF8F5C32221376680017C9FF /* Chris */,
+				EF8F5C33221376710017C9FF /* Freddy */,
+				EF8F5C34221376790017C9FF /* Giannini */,
+				EF8F5C35221376860017C9FF /* Gio */,
+				EF8F5C362213768D0017C9FF /* Ivan */,
+				EF8F5C37221376960017C9FF /* Jim */,
+				EF8F5C382213769F0017C9FF /* Nilson */,
+				EF8F5C39221376AA0017C9FF /* Paulo */,
+				EF8F5C3A221376B70017C9FF /* Ryan */,
+			);
+			path = "Demo ViewControllers";
+			sourceTree = "<group>";
+		};
+		EF8F5C312213765F0017C9FF /* Alejo */ = {
+			isa = PBXGroup;
+			children = (
 				EF8F5C1D22132A6D0017C9FF /* AlejoViewController.swift */,
 				EF8F5C1E22132A6D0017C9FF /* AlejoViewController.xib */,
+			);
+			path = Alejo;
+			sourceTree = "<group>";
+		};
+		EF8F5C32221376680017C9FF /* Chris */ = {
+			isa = PBXGroup;
+			children = (
 				EF8F5C0922132A190017C9FF /* ChrisViewController.swift */,
 				EF8F5C0A22132A190017C9FF /* ChrisViewController.xib */,
+			);
+			path = Chris;
+			sourceTree = "<group>";
+		};
+		EF8F5C33221376710017C9FF /* Freddy */ = {
+			isa = PBXGroup;
+			children = (
 				EF8F5C0D22132A250017C9FF /* FreddyViewController.swift */,
 				EF8F5C0E22132A250017C9FF /* FreddyViewController.xib */,
+			);
+			path = Freddy;
+			sourceTree = "<group>";
+		};
+		EF8F5C34221376790017C9FF /* Giannini */ = {
+			isa = PBXGroup;
+			children = (
 				EF8F5C1922132A630017C9FF /* GianniniViewController.swift */,
 				EF8F5C1A22132A630017C9FF /* GianniniViewController.xib */,
+			);
+			path = Giannini;
+			sourceTree = "<group>";
+		};
+		EF8F5C35221376860017C9FF /* Gio */ = {
+			isa = PBXGroup;
+			children = (
 				EF8F5C1122132A330017C9FF /* GioViewController.swift */,
 				EF8F5C1222132A330017C9FF /* GioViewController.xib */,
+			);
+			path = Gio;
+			sourceTree = "<group>";
+		};
+		EF8F5C362213768D0017C9FF /* Ivan */ = {
+			isa = PBXGroup;
+			children = (
 				EF8F5C2122132CEC0017C9FF /* IvanViewController.swift */,
 				EF8F5C2222132CEC0017C9FF /* IvanViewController.xib */,
+			);
+			path = Ivan;
+			sourceTree = "<group>";
+		};
+		EF8F5C37221376960017C9FF /* Jim */ = {
+			isa = PBXGroup;
+			children = (
 				EF8F5C2922132D120017C9FF /* JimViewController.swift */,
 				EF8F5C2A22132D120017C9FF /* JimViewController.xib */,
+			);
+			path = Jim;
+			sourceTree = "<group>";
+		};
+		EF8F5C382213769F0017C9FF /* Nilson */ = {
+			isa = PBXGroup;
+			children = (
 				EF8F5C2522132CFB0017C9FF /* NilsonViewController.swift */,
 				EF8F5C2622132CFB0017C9FF /* NilsonViewController.xib */,
+			);
+			path = Nilson;
+			sourceTree = "<group>";
+		};
+		EF8F5C39221376AA0017C9FF /* Paulo */ = {
+			isa = PBXGroup;
+			children = (
+				EF8F5C2D22136EA90017C9FF /* PauloViewController.swift */,
+				EF8F5C2E22136EA90017C9FF /* PauloViewController.xib */,
+			);
+			path = Paulo;
+			sourceTree = "<group>";
+		};
+		EF8F5C3A221376B70017C9FF /* Ryan */ = {
+			isa = PBXGroup;
+			children = (
 				EF8F5C1522132A4A0017C9FF /* RyanViewController.swift */,
 				EF8F5C1622132A4A0017C9FF /* RyanViewController.xib */,
 			);
-			path = "Demo ViewControllers";
+			path = Ryan;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +275,7 @@
 				EF8F5C2022132A6D0017C9FF /* AlejoViewController.xib in Resources */,
 				EF8F5C1022132A250017C9FF /* FreddyViewController.xib in Resources */,
 				EF8F5C1C22132A630017C9FF /* GianniniViewController.xib in Resources */,
+				EF8F5C3022136EA90017C9FF /* PauloViewController.xib in Resources */,
 				EF8F5C1422132A330017C9FF /* GioViewController.xib in Resources */,
 				EF8F5C1822132A4A0017C9FF /* RyanViewController.xib in Resources */,
 				EF8F5BFC221328F60017C9FF /* Assets.xcassets in Resources */,
@@ -210,6 +297,7 @@
 				EF8F5C072213296C0017C9FF /* MainTableViewController.swift in Sources */,
 				EF8F5C0F22132A250017C9FF /* FreddyViewController.swift in Sources */,
 				EF8F5C2B22132D120017C9FF /* JimViewController.swift in Sources */,
+				EF8F5C2F22136EA90017C9FF /* PauloViewController.swift in Sources */,
 				EF8F5C1722132A4A0017C9FF /* RyanViewController.swift in Sources */,
 				EF8F5C1F22132A6D0017C9FF /* AlejoViewController.swift in Sources */,
 				EF8F5BF5221328F50017C9FF /* AppDelegate.swift in Sources */,
