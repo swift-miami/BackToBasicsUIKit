@@ -31,6 +31,12 @@
 		EF8F5C2C22132D120017C9FF /* JimViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF8F5C2A22132D120017C9FF /* JimViewController.xib */; };
 		EF8F5C2F22136EA90017C9FF /* PauloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8F5C2D22136EA90017C9FF /* PauloViewController.swift */; };
 		EF8F5C3022136EA90017C9FF /* PauloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF8F5C2E22136EA90017C9FF /* PauloViewController.xib */; };
+		F67A57CC222B275300F2E56E /* IBSliderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67A57CA222B275300F2E56E /* IBSliderVC.swift */; };
+		F67A57CD222B275300F2E56E /* IBSliderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F67A57CB222B275300F2E56E /* IBSliderVC.xib */; };
+		F67A57CF222B278200F2E56E /* ProgrammaticSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67A57CE222B278200F2E56E /* ProgrammaticSliderViewController.swift */; };
+		F67A57D2222B619000F2E56E /* IBTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67A57D0222B619000F2E56E /* IBTextFieldViewController.swift */; };
+		F67A57D3222B619000F2E56E /* IBTextFieldViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F67A57D1222B619000F2E56E /* IBTextFieldViewController.xib */; };
+		F67A57D7222B641C00F2E56E /* ProgrammaticTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67A57D6222B641C00F2E56E /* ProgrammaticTextFieldViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +66,12 @@
 		EF8F5C2A22132D120017C9FF /* JimViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JimViewController.xib; sourceTree = "<group>"; };
 		EF8F5C2D22136EA90017C9FF /* PauloViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauloViewController.swift; sourceTree = "<group>"; };
 		EF8F5C2E22136EA90017C9FF /* PauloViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PauloViewController.xib; sourceTree = "<group>"; };
+		F67A57CA222B275300F2E56E /* IBSliderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBSliderVC.swift; sourceTree = "<group>"; };
+		F67A57CB222B275300F2E56E /* IBSliderVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IBSliderVC.xib; sourceTree = "<group>"; };
+		F67A57CE222B278200F2E56E /* ProgrammaticSliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammaticSliderViewController.swift; sourceTree = "<group>"; };
+		F67A57D0222B619000F2E56E /* IBTextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBTextFieldViewController.swift; sourceTree = "<group>"; };
+		F67A57D1222B619000F2E56E /* IBTextFieldViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IBTextFieldViewController.xib; sourceTree = "<group>"; };
+		F67A57D6222B641C00F2E56E /* ProgrammaticTextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammaticTextFieldViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,8 +161,15 @@
 		EF8F5C34221376790017C9FF /* Giannini */ = {
 			isa = PBXGroup;
 			children = (
+				F67A57CE222B278200F2E56E /* ProgrammaticSliderViewController.swift */,
+				F67A57D6222B641C00F2E56E /* ProgrammaticTextFieldViewController.swift */,
 				EF8F5C1922132A630017C9FF /* GianniniViewController.swift */,
+				F67A57D0222B619000F2E56E /* IBTextFieldViewController.swift */,
+				F67A57D1222B619000F2E56E /* IBTextFieldViewController.xib */,
 				EF8F5C1A22132A630017C9FF /* GianniniViewController.xib */,
+				F67A57CA222B275300F2E56E /* IBSliderVC.swift */,
+				F67A57CB222B275300F2E56E /* IBSliderVC.xib */,
+				F67A57C7222B266E00F2E56E /* Programmatic */,
 			);
 			path = Giannini;
 			sourceTree = "<group>";
@@ -207,6 +226,13 @@
 				EF8F5C1622132A4A0017C9FF /* RyanViewController.xib */,
 			);
 			path = Ryan;
+			sourceTree = "<group>";
+		};
+		F67A57C7222B266E00F2E56E /* Programmatic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Programmatic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,9 +298,11 @@
 				EF8F5C2C22132D120017C9FF /* JimViewController.xib in Resources */,
 				EF8F5BFF221328F60017C9FF /* LaunchScreen.storyboard in Resources */,
 				EF8F5C2822132CFB0017C9FF /* NilsonViewController.xib in Resources */,
+				F67A57CD222B275300F2E56E /* IBSliderVC.xib in Resources */,
 				EF8F5C2022132A6D0017C9FF /* AlejoViewController.xib in Resources */,
 				EF8F5C1022132A250017C9FF /* FreddyViewController.xib in Resources */,
 				EF8F5C1C22132A630017C9FF /* GianniniViewController.xib in Resources */,
+				F67A57D3222B619000F2E56E /* IBTextFieldViewController.xib in Resources */,
 				EF8F5C3022136EA90017C9FF /* PauloViewController.xib in Resources */,
 				EF8F5C1422132A330017C9FF /* GioViewController.xib in Resources */,
 				EF8F5C1822132A4A0017C9FF /* RyanViewController.xib in Resources */,
@@ -291,12 +319,16 @@
 			files = (
 				EF8F5C1322132A330017C9FF /* GioViewController.swift in Sources */,
 				EF8F5C0B22132A190017C9FF /* ChrisViewController.swift in Sources */,
+				F67A57D7222B641C00F2E56E /* ProgrammaticTextFieldViewController.swift in Sources */,
 				EF8F5C1B22132A630017C9FF /* GianniniViewController.swift in Sources */,
+				F67A57D2222B619000F2E56E /* IBTextFieldViewController.swift in Sources */,
 				EF8F5C2722132CFB0017C9FF /* NilsonViewController.swift in Sources */,
 				EF8F5C2322132CEC0017C9FF /* IvanViewController.swift in Sources */,
+				F67A57CC222B275300F2E56E /* IBSliderVC.swift in Sources */,
 				EF8F5C072213296C0017C9FF /* MainTableViewController.swift in Sources */,
 				EF8F5C0F22132A250017C9FF /* FreddyViewController.swift in Sources */,
 				EF8F5C2B22132D120017C9FF /* JimViewController.swift in Sources */,
+				F67A57CF222B278200F2E56E /* ProgrammaticSliderViewController.swift in Sources */,
 				EF8F5C2F22136EA90017C9FF /* PauloViewController.swift in Sources */,
 				EF8F5C1722132A4A0017C9FF /* RyanViewController.swift in Sources */,
 				EF8F5C1F22132A6D0017C9FF /* AlejoViewController.swift in Sources */,
@@ -439,7 +471,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EER35MGDHD;
+				DEVELOPMENT_TEAM = 9GX9P2M56N;
 				INFOPLIST_FILE = BackToBasicsUIKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -457,7 +489,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EER35MGDHD;
+				DEVELOPMENT_TEAM = 9GX9P2M56N;
 				INFOPLIST_FILE = BackToBasicsUIKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
