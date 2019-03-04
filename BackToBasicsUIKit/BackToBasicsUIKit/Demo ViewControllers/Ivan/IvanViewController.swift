@@ -154,8 +154,7 @@ class PagedViewController: UIViewController {
         view.addConstraints([label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                              label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
                              label.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
-                             label.heightAnchor.constraint(equalTo: label.heightAnchor)
-                            ])
+                             label.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.8)])
     }
 
 }
