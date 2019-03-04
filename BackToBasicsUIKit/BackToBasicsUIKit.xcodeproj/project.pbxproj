@@ -24,7 +24,6 @@
 		EF8F5C1F22132A6D0017C9FF /* AlejoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8F5C1D22132A6D0017C9FF /* AlejoViewController.swift */; };
 		EF8F5C2022132A6D0017C9FF /* AlejoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF8F5C1E22132A6D0017C9FF /* AlejoViewController.xib */; };
 		EF8F5C2322132CEC0017C9FF /* IvanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8F5C2122132CEC0017C9FF /* IvanViewController.swift */; };
-		EF8F5C2422132CEC0017C9FF /* IvanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF8F5C2222132CEC0017C9FF /* IvanViewController.xib */; };
 		EF8F5C2722132CFB0017C9FF /* NilsonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8F5C2522132CFB0017C9FF /* NilsonViewController.swift */; };
 		EF8F5C2822132CFB0017C9FF /* NilsonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF8F5C2622132CFB0017C9FF /* NilsonViewController.xib */; };
 		EF8F5C2B22132D120017C9FF /* JimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8F5C2922132D120017C9FF /* JimViewController.swift */; };
@@ -53,7 +52,6 @@
 		EF8F5C1D22132A6D0017C9FF /* AlejoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlejoViewController.swift; sourceTree = "<group>"; };
 		EF8F5C1E22132A6D0017C9FF /* AlejoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlejoViewController.xib; sourceTree = "<group>"; };
 		EF8F5C2122132CEC0017C9FF /* IvanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IvanViewController.swift; sourceTree = "<group>"; };
-		EF8F5C2222132CEC0017C9FF /* IvanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IvanViewController.xib; sourceTree = "<group>"; };
 		EF8F5C2522132CFB0017C9FF /* NilsonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NilsonViewController.swift; sourceTree = "<group>"; };
 		EF8F5C2622132CFB0017C9FF /* NilsonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NilsonViewController.xib; sourceTree = "<group>"; };
 		EF8F5C2922132D120017C9FF /* JimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JimViewController.swift; sourceTree = "<group>"; };
@@ -168,7 +166,6 @@
 			isa = PBXGroup;
 			children = (
 				EF8F5C2122132CEC0017C9FF /* IvanViewController.swift */,
-				EF8F5C2222132CEC0017C9FF /* IvanViewController.xib */,
 			);
 			path = Ivan;
 			sourceTree = "<group>";
@@ -268,7 +265,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF8F5C0C22132A190017C9FF /* ChrisViewController.xib in Resources */,
-				EF8F5C2422132CEC0017C9FF /* IvanViewController.xib in Resources */,
 				EF8F5C2C22132D120017C9FF /* JimViewController.xib in Resources */,
 				EF8F5BFF221328F60017C9FF /* LaunchScreen.storyboard in Resources */,
 				EF8F5C2822132CFB0017C9FF /* NilsonViewController.xib in Resources */,
