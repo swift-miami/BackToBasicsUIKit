@@ -15,5 +15,4 @@ class RyanViewController: UIViewController {
         super.viewDidLoad()
 
     }
-
 }
