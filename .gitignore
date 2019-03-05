@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 *.xcuserstate
+=======
+.DS_Store
+>>>>>>> Ignore DS_Store
