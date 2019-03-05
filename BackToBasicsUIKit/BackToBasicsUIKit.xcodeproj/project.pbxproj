@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		69B9A1CE222D3E4A008BBDCC /* RyansAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B9A1CD222D3E4A008BBDCC /* RyansAssets.xcassets */; };
+		7C9655B4222D93FD00A0BA9C /* JsonPlaceholderNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9655B3222D93FD00A0BA9C /* JsonPlaceholderNetworking.swift */; };
+		7C9655B7222D9B2400A0BA9C /* RyanCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9655B5222D9B2400A0BA9C /* RyanCollectionViewCell.swift */; };
+		7C9655B8222D9B2400A0BA9C /* RyanCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C9655B6222D9B2400A0BA9C /* RyanCollectionViewCell.xib */; };
 		EF8F5BF5221328F50017C9FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8F5BF4221328F50017C9FF /* AppDelegate.swift */; };
 		EF8F5BFC221328F60017C9FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF8F5BFB221328F60017C9FF /* Assets.xcassets */; };
 		EF8F5BFF221328F60017C9FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF8F5BFD221328F60017C9FF /* LaunchScreen.storyboard */; };
@@ -36,6 +39,9 @@
 
 /* Begin PBXFileReference section */
 		69B9A1CD222D3E4A008BBDCC /* RyansAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = RyansAssets.xcassets; sourceTree = "<group>"; };
+		7C9655B3222D93FD00A0BA9C /* JsonPlaceholderNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonPlaceholderNetworking.swift; sourceTree = "<group>"; };
+		7C9655B5222D9B2400A0BA9C /* RyanCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RyanCollectionViewCell.swift; sourceTree = "<group>"; };
+		7C9655B6222D9B2400A0BA9C /* RyanCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RyanCollectionViewCell.xib; sourceTree = "<group>"; };
 		EF8F5BF1221328F50017C9FF /* BackToBasicsUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackToBasicsUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF8F5BF4221328F50017C9FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF8F5BFB221328F60017C9FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -208,6 +214,9 @@
 				EF8F5C1522132A4A0017C9FF /* RyanViewController.swift */,
 				EF8F5C1622132A4A0017C9FF /* RyanViewController.xib */,
 				69B9A1CD222D3E4A008BBDCC /* RyansAssets.xcassets */,
+				7C9655B3222D93FD00A0BA9C /* JsonPlaceholderNetworking.swift */,
+				7C9655B5222D9B2400A0BA9C /* RyanCollectionViewCell.swift */,
+				7C9655B6222D9B2400A0BA9C /* RyanCollectionViewCell.xib */,
 			);
 			path = Ryan;
 			sourceTree = "<group>";
@@ -273,6 +282,7 @@
 				EF8F5C0C22132A190017C9FF /* ChrisViewController.xib in Resources */,
 				EF8F5C2C22132D120017C9FF /* JimViewController.xib in Resources */,
 				EF8F5BFF221328F60017C9FF /* LaunchScreen.storyboard in Resources */,
+				7C9655B8222D9B2400A0BA9C /* RyanCollectionViewCell.xib in Resources */,
 				69B9A1CE222D3E4A008BBDCC /* RyansAssets.xcassets in Resources */,
 				EF8F5C2822132CFB0017C9FF /* NilsonViewController.xib in Resources */,
 				EF8F5C2022132A6D0017C9FF /* AlejoViewController.xib in Resources */,
@@ -297,10 +307,12 @@
 				EF8F5C1B22132A630017C9FF /* GianniniViewController.swift in Sources */,
 				EF8F5C2722132CFB0017C9FF /* NilsonViewController.swift in Sources */,
 				EF8F5C2322132CEC0017C9FF /* IvanViewController.swift in Sources */,
+				7C9655B4222D93FD00A0BA9C /* JsonPlaceholderNetworking.swift in Sources */,
 				EF8F5C072213296C0017C9FF /* MainTableViewController.swift in Sources */,
 				EF8F5C0F22132A250017C9FF /* FreddyViewController.swift in Sources */,
 				EF8F5C2B22132D120017C9FF /* JimViewController.swift in Sources */,
 				EF8F5C2F22136EA90017C9FF /* PauloViewController.swift in Sources */,
+				7C9655B7222D9B2400A0BA9C /* RyanCollectionViewCell.swift in Sources */,
 				EF8F5C1722132A4A0017C9FF /* RyanViewController.swift in Sources */,
 				EF8F5C1F22132A6D0017C9FF /* AlejoViewController.swift in Sources */,
 				EFF5949C222F7C8C00142FEB /* PagedViewController.swift in Sources */,
