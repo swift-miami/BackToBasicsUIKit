@@ -54,11 +54,7 @@ class JimViewController: UIViewController {
             
             let progressFloat = Float(self.progress.fractionCompleted)
             self.progressView.setProgress(progressFloat, animated: true)
-            
-            
         }
-        
-        
     }
     
     func createMonthPicker() {
@@ -78,7 +74,7 @@ class JimViewController: UIViewController {
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
         
-        //Customizations
+        // Customizations
         //    toolBar.barTintColor = .black
         //    toolBar.tintColor = .white
         
