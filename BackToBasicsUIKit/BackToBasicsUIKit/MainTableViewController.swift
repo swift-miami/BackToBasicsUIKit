@@ -17,7 +17,8 @@ class MainTableViewController: UITableViewController {
                              "Iván",
                              "Jim",
                              "Nilson",
-                             "Ryan"]
+                             "Ryan",
+                             "Paulo"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +48,7 @@ class MainTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var demoVC = UIViewController()
+        var demoVC: UIViewController?
         
         switch indexPath.row {
         case 0: demoVC = ChrisViewController()
@@ -58,12 +59,14 @@ class MainTableViewController: UITableViewController {
         case 5: demoVC = JimViewController()
         case 6: demoVC = NilsonViewController()
         case 7: demoVC = RyanViewController()
+        case 8: demoVC = PauloViewController()
 
         default:
             assertionFailure("Cell not configured yet")
         }
-        
-        demoVC.navigationItem.title = demoTypes[indexPath.row]
-        navigationController?.pushViewController(demoVC, animated: true)
+
+        guard let vc = demoVC else { return }
+        vc.navigationItem.title = demoTypes[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
