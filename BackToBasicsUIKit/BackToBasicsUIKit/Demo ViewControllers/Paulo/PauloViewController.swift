@@ -49,6 +49,11 @@ extension PauloViewController {
 
         // Center cells on iPad so its a bit more usable
         tableView.cellLayoutMarginsFollowReadableWidth = true
+
+        // Set up delegates (the first two can be done in IB)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.dragDelegate = self
     }
 
     // Handle what happens when the refresh control is pulled down to refresh
