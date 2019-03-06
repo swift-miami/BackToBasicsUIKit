@@ -11,9 +11,6 @@ import UIKit
 
 class PauloViewController: UIViewController {
 
-    // Lets not enter the view model prefix every time
-    typealias User = PauloViewModel.User
-
     @IBOutlet weak private var tableView: UITableView!
     private let refreshControl = UIRefreshControl()
 
@@ -117,7 +114,7 @@ extension PauloViewController: UITableViewDataSource {
                                                        for: indexPath) as? PauloTableViewCell else {
                                                         fatalError("Could not dequeue user cell")
         }
-        let user = viewModel.userData(for: indexPath.section, row: indexPath.row)
+        let user = viewModel.userData(at: indexPath)
         cell.setData(name: user.name ?? user.username, imageURL: user.avatarURL, location: user.location)
         return cell
     }

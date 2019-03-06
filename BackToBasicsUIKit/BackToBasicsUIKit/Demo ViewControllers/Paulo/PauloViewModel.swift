@@ -10,20 +10,6 @@ import UIKit
 
 class PauloViewModel {
 
-    struct User: Codable, Hashable {
-        let username: String
-        let name: String?
-        let avatarURL: String?
-        let location: String?
-        var owner: Bool = false
-
-        enum CodingKeys: String, CodingKey {
-            case name, location
-            case username = "login"
-            case avatarURL = "avatar_url"
-        }
-    }
-
     // Hard-coded list of usernames and owners from https://github.com/orgs/swift-miami/people
     private let usernames = ["Alejom334", "alfimerino", "chuva-io", "cromanelli", "GianniniCharles", "ivancr", "jslusser", "ryantstone", "paulofierro"]
 
@@ -73,20 +59,20 @@ extension PauloViewModel {
     }
 
     /// Returns the user for a given section/row
-    public func userData(for section: Int, row: Int) -> User {
-        let users = getUsers(isOwner: (section == 0))
-        return users[row]
+    public func userData(at indexPath: IndexPath) -> User {
+        let users = getUsers(isOwner: (indexPath.section == 0))
+        return users[indexPath.row]
     }
 
     /// Deletes a user
     public func removeUser(at indexPath: IndexPath) {
-        let user = userData(for: indexPath.section, row: indexPath.row)
+        let user = userData(at: indexPath)
         users.remove(user)
     }
 
     /// Makes a user an owner
     public func ownerifyUser(at indexPath: IndexPath) {
-        var user = userData(for: indexPath.section, row: indexPath.row)
+        var user = userData(at: indexPath)
         users.remove(user)
         user.owner = true
         users.insert(user)

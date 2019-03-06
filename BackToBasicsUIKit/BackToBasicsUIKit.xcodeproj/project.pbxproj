@@ -12,6 +12,7 @@
 		3AA01B8B222F8B98008A68D9 /* PauloHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA01B8A222F8B98008A68D9 /* PauloHeaderView.xib */; };
 		3AA01B90222F91F3008A68D9 /* PauloTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA01B8E222F91F3008A68D9 /* PauloTableViewCell.swift */; };
 		3AA01B91222F91F3008A68D9 /* PauloTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA01B8F222F91F3008A68D9 /* PauloTableViewCell.xib */; };
+		3AA0B2AC223053CA0013C34C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA0B2AB223053CA0013C34C /* User.swift */; };
 		EF8F5BF5221328F50017C9FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8F5BF4221328F50017C9FF /* AppDelegate.swift */; };
 		EF8F5BFC221328F60017C9FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF8F5BFB221328F60017C9FF /* Assets.xcassets */; };
 		EF8F5BFF221328F60017C9FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF8F5BFD221328F60017C9FF /* LaunchScreen.storyboard */; };
@@ -44,6 +45,7 @@
 		3AA01B8A222F8B98008A68D9 /* PauloHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PauloHeaderView.xib; sourceTree = "<group>"; };
 		3AA01B8E222F91F3008A68D9 /* PauloTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauloTableViewCell.swift; sourceTree = "<group>"; };
 		3AA01B8F222F91F3008A68D9 /* PauloTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PauloTableViewCell.xib; sourceTree = "<group>"; };
+		3AA0B2AB223053CA0013C34C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = "BackToBasicsUIKit/Demo ViewControllers/Paulo/User.swift"; sourceTree = SOURCE_ROOT; };
 		EF8F5BF1221328F50017C9FF /* BackToBasicsUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackToBasicsUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF8F5BF4221328F50017C9FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF8F5BFB221328F60017C9FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			children = (
 				3AA01B8C222F8B9C008A68D9 /* Header */,
 				3AA01B8D222F91D1008A68D9 /* Cell */,
+				3AA0B2AB223053CA0013C34C /* User.swift */,
 			);
 			path = "Accessory Views";
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				EF8F5C1B22132A630017C9FF /* GianniniViewController.swift in Sources */,
 				EF8F5C2722132CFB0017C9FF /* NilsonViewController.swift in Sources */,
 				EF8F5C2322132CEC0017C9FF /* IvanViewController.swift in Sources */,
+				3AA0B2AC223053CA0013C34C /* User.swift in Sources */,
 				EF8F5C072213296C0017C9FF /* MainTableViewController.swift in Sources */,
 				EF8F5C0F22132A250017C9FF /* FreddyViewController.swift in Sources */,
 				EF8F5C2B22132D120017C9FF /* JimViewController.swift in Sources */,
