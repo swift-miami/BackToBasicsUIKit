@@ -30,6 +30,7 @@
 		EF8F5C2C22132D120017C9FF /* JimViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF8F5C2A22132D120017C9FF /* JimViewController.xib */; };
 		EF8F5C2F22136EA90017C9FF /* PauloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8F5C2D22136EA90017C9FF /* PauloViewController.swift */; };
 		EF8F5C3022136EA90017C9FF /* PauloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF8F5C2E22136EA90017C9FF /* PauloViewController.xib */; };
+		EFF5949C222F7C8C00142FEB /* PagedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF5949B222F7C8C00142FEB /* PagedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		EF8F5C2A22132D120017C9FF /* JimViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JimViewController.xib; sourceTree = "<group>"; };
 		EF8F5C2D22136EA90017C9FF /* PauloViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauloViewController.swift; sourceTree = "<group>"; };
 		EF8F5C2E22136EA90017C9FF /* PauloViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PauloViewController.xib; sourceTree = "<group>"; };
+		EFF5949B222F7C8C00142FEB /* PagedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				EF8F5C2122132CEC0017C9FF /* IvanViewController.swift */,
+				EFF5949B222F7C8C00142FEB /* PagedViewController.swift */,
 			);
 			path = Ivan;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				EF8F5C2F22136EA90017C9FF /* PauloViewController.swift in Sources */,
 				EF8F5C1722132A4A0017C9FF /* RyanViewController.swift in Sources */,
 				EF8F5C1F22132A6D0017C9FF /* AlejoViewController.swift in Sources */,
+				EFF5949C222F7C8C00142FEB /* PagedViewController.swift in Sources */,
 				EF8F5BF5221328F50017C9FF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
