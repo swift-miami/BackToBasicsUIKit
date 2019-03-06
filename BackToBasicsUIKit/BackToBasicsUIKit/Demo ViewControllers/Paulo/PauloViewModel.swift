@@ -82,7 +82,9 @@ extension PauloViewModel {
         usernames.forEach { username in
             loadUser(username) { [weak self] user in
                 DispatchQueue.main.async {
-                    // Add the user
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = true
+
+                    // Add the user if we got one
                     if let user = user {
                         self?.users.append(user)
                     }
@@ -95,6 +97,9 @@ extension PauloViewModel {
 
                     // Check if we're done
                     if currentIndex == totalUsers {
+                        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+
+                        // Store the last updated date
                         self?.updated = Date()
                         completion()
                     }
