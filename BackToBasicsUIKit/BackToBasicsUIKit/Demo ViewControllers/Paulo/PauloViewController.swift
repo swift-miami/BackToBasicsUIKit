@@ -19,13 +19,8 @@ class PauloViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         loadData()
     }
-
 }
 
 // MARK: - Private Methods
