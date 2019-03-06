@@ -10,6 +10,7 @@ import UIKit
 
 class IvanViewController: UIViewController {
 
+    // MARK: - UIToolbar
     private lazy var toolBar: UIToolbar = {
         let toolBar = UIToolbar()
 
@@ -19,6 +20,7 @@ class IvanViewController: UIViewController {
         return toolBar
     }()
 
+    // MARK: UIToolBar Buttons
     private let flexSpaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
 
     private var fixedSpaceButton: UIBarButtonItem = {
@@ -39,6 +41,7 @@ class IvanViewController: UIViewController {
         return UIBarButtonItem(barButtonSystemItem: .organize, target: self, action: nil)
     }()
 
+    // MARK: - UIPageViewController
     private lazy var pageViewController: UIPageViewController = {
         let pageViewController = UIPageViewController(transitionStyle: .scroll,
                                                       navigationOrientation: .horizontal,
@@ -94,6 +97,7 @@ class IvanViewController: UIViewController {
     }
 }
 
+// MARK: - UIPageViewControllerDataSource
 extension IvanViewController: UIPageViewControllerDataSource {
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return controllers.count
@@ -124,37 +128,4 @@ extension IvanViewController: UIPageViewControllerDataSource {
 
         return nil
     }
-}
-
-
-class PagedViewController: UIViewController {
-
-    private lazy var label: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 24, weight: .heavy)
-        label.textColor = .white
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        label.adjustsFontSizeToFitWidth = true
-        label.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(label)
-        return label
-    }()
-
-    convenience init(backgroundColor: UIColor, text: String) {
-        self.init()
-
-        view.backgroundColor = backgroundColor
-        label.text = text
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        view.addConstraints([label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                             label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-                             label.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
-                             label.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.8)])
-    }
-
 }
