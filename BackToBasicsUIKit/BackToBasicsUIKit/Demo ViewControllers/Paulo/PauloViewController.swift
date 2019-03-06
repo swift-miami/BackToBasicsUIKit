@@ -8,6 +8,7 @@
 
 
 import UIKit
+import MobileCoreServices
 
 class PauloViewController: UIViewController {
 
@@ -202,5 +203,49 @@ extension PauloViewController: UITableViewDelegate {
             completionHandler(true)
         }
         return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+}
+
+// MARK: - Drag Methods
+
+extension PauloViewController: UITableViewDragDelegate {
+
+    func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        return dragItems(for: indexPath)
+    }
+
+    /// Handle dragging of items at a given index path
+    private func dragItems(for indexPath: IndexPath) -> [UIDragItem] {
+        let user = viewModel.userData(at: indexPath)
+
+        let itemProvider = NSItemProvider()
+
+        // Define identifiers
+        let plainTextIdentifier = kUTTypePlainText as String // Requires import MobileCoreServices
+        let jpegIdentifier = kUTTypeJPEG as String
+
+        let cell = tableView.cellForRow(at: indexPath) as? PauloTableViewCell
+        let imageData = cell?.loadedImage?.jpegData(compressionQuality: 0.8)
+
+        // Register the text representation
+        itemProvider.registerDataRepresentation(forTypeIdentifier: plainTextIdentifier, visibility: .all) { completion in
+            let data = user.username.data(using: .utf8)
+            completion(data, nil)
+            return nil
+        }
+
+        // Register the image representation
+        itemProvider.registerDataRepresentation(forTypeIdentifier: jpegIdentifier, visibility: .all) { completion in
+            guard let imageData = imageData else {
+                completion(nil, nil)
+                return nil
+            }
+
+            completion(imageData, nil)
+            return nil
+        }
+
+        let dragItem = UIDragItem(itemProvider: itemProvider)
+        return [dragItem]
     }
 }

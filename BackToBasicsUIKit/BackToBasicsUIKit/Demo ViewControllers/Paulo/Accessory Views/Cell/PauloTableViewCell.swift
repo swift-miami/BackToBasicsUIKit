@@ -23,6 +23,11 @@ class PauloTableViewCell: UITableViewCell {
     // An expanded cell will be this height
     public static let estimatedRowHeight: CGFloat = 100
 
+    // Allows outsiders to access our loaded image
+    public var loadedImage: UIImage? {
+        return avatarImageView.image
+    }
+
     // Setup the view once the NIB has been loaded
     override func awakeFromNib() {
         super.awakeFromNib()
