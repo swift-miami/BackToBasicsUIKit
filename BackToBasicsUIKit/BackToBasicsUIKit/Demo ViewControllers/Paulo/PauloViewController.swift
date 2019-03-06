@@ -42,6 +42,9 @@ extension PauloViewController {
 
         let headerNib = UINib(nibName: "PauloHeaderView", bundle: nil)
         tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: PauloHeaderView.identifier)
+
+        let cellNib = UINib(nibName: "PauloTableViewCell", bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: "pauloTableViewCell")
     }
 
     // Handle what happens when the refresh control is pulled down to refresh
@@ -87,8 +90,12 @@ extension PauloViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "SH"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "pauloTableViewCell",
+                                                     for: indexPath) as? PauloTableViewCell else {
+                                                        fatalError("Could not dequeue user cell")
+        }
+        //let account = user.accounts[indexPath.row]
+        //cell.setAccount(account)
         return cell
     }
 
