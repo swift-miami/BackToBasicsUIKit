@@ -18,6 +18,12 @@ class RyanViewController: UIViewController {
             }
         }
     }
+//    lazy var layout: UICollectionViewLayout = {
+//        let layout = UICollectionViewLayout()
+//        layout
+//        layout.collectionViewContentSize = self.view.frame.width
+//        return layout
+//    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +60,7 @@ extension RyanViewController: UICollectionViewDataSource {
 }
 
 extension RyanViewController: UICollectionViewDelegate {
+    // didSelect is when a user selects a cell
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         // Going to need the data on the image
@@ -78,5 +85,14 @@ extension RyanViewController: UICollectionViewDelegate {
         
         // Present the alert to be displayed in the current vc
         present(alert, animated: true, completion: nil)
+    }
+}
+
+extension RyanViewController: UICollectionViewDelegateFlowLayout {
+    // Need to reseize? Do it here! (sorta)
+    // Might want to read some about UICollectionViewLayout: https://developer.apple.com/documentation/uikit/uicollectionviewlayout#
+    // And UICollectionViewFlowLayout: https://developer.apple.com/documentation/uikit/uicollectionviewflowlayout (Preferred method)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width - 20, height: 300)
     }
 }
