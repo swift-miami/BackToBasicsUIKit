@@ -41,6 +41,11 @@ extension PauloViewController {
 
         let cellNib = UINib(nibName: String(describing: PauloTableViewCell.self), bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: PauloTableViewCell.identifier)
+
+        // Setting this gives us a slight performance boost, from the docs:
+        //   "using estimation allows you to defer some of the cost of geometry
+        //    calculation from load time to scrolling time."
+        tableView.estimatedRowHeight = PauloTableViewCell.estimatedRowHeight
     }
 
     // Handle what happens when the refresh control is pulled down to refresh

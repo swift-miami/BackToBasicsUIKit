@@ -20,6 +20,9 @@ class PauloTableViewCell: UITableViewCell {
     // In the real world we could use R.swift to get this from the NIB automatically
     public static let identifier = "pauloTableViewCell"
 
+    // An expanded cell will be this height
+    public static let estimatedRowHeight: CGFloat = 100
+
     // Setup the view once the NIB has been loaded
     override func awakeFromNib() {
         super.awakeFromNib()
