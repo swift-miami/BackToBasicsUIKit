@@ -10,7 +10,7 @@ import UIKit
 
 class PauloViewModel {
 
-    struct User: Codable {
+    struct User: Codable, Hashable {
         let username: String
         let name: String?
         let avatarURL: String?
@@ -30,6 +30,9 @@ class PauloViewModel {
     // Hard-coded list of owners
     private let owners = ["ivancr", "chuva-io", "ryantstone"]
 
+    /// The loaded list of users
+    private var users: Set<User> = Set()
+
     // When the data was last updated
     private var updated:Date?
 
@@ -42,12 +45,9 @@ class PauloViewModel {
 
     /// The title for the VC
     public let title = "Swift Miami Github Members"
-
-    /// The loaded list of users
-    public var users = [User]()
 }
 
-// MARK: Public Methods for Table View Data
+// MARK: - Public Methods for Table View Data
 
 extension PauloViewModel {
 
@@ -78,16 +78,25 @@ extension PauloViewModel {
         return users[row]
     }
 
+    public func removeUser(at indexPath: IndexPath) {
+        let user = userData(for: indexPath.section, row: indexPath.row)
+        users.remove(user)
+    }
+}
+
+// MARK: - Helpers
+
+extension PauloViewModel {
+
     /// Returns the list of users that either are or are not owners
     private func getUsers(isOwner: Bool) -> [User] {
         return users.filter { $0.owner == isOwner }
     }
 }
 
-// MARK: Networking
+// MARK: - Networking
 
 extension PauloViewModel {
-
 
     /// Loads user data from the Github API
     ///
@@ -106,7 +115,7 @@ extension PauloViewModel {
 
                     // Add the user if we got one
                     if let user = user {
-                        self?.users.append(user)
+                        self?.users.insert(user)
                     }
 
                     // Update the index
