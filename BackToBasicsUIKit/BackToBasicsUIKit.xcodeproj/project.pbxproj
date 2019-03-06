@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		69B9A1CE222D3E4A008BBDCC /* RyansAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B9A1CD222D3E4A008BBDCC /* RyansAssets.xcassets */; };
 		7C9655B4222D93FD00A0BA9C /* JsonPlaceholderNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9655B3222D93FD00A0BA9C /* JsonPlaceholderNetworking.swift */; };
 		7C9655B7222D9B2400A0BA9C /* RyanCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9655B5222D9B2400A0BA9C /* RyanCollectionViewCell.swift */; };
 		7C9655B8222D9B2400A0BA9C /* RyanCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C9655B6222D9B2400A0BA9C /* RyanCollectionViewCell.xib */; };
@@ -38,7 +37,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		69B9A1CD222D3E4A008BBDCC /* RyansAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = RyansAssets.xcassets; sourceTree = "<group>"; };
 		7C9655B3222D93FD00A0BA9C /* JsonPlaceholderNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonPlaceholderNetworking.swift; sourceTree = "<group>"; };
 		7C9655B5222D9B2400A0BA9C /* RyanCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RyanCollectionViewCell.swift; sourceTree = "<group>"; };
 		7C9655B6222D9B2400A0BA9C /* RyanCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RyanCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -213,7 +211,6 @@
 			children = (
 				EF8F5C1522132A4A0017C9FF /* RyanViewController.swift */,
 				EF8F5C1622132A4A0017C9FF /* RyanViewController.xib */,
-				69B9A1CD222D3E4A008BBDCC /* RyansAssets.xcassets */,
 				7C9655B3222D93FD00A0BA9C /* JsonPlaceholderNetworking.swift */,
 				7C9655B5222D9B2400A0BA9C /* RyanCollectionViewCell.swift */,
 				7C9655B6222D9B2400A0BA9C /* RyanCollectionViewCell.xib */,
@@ -283,7 +280,6 @@
 				EF8F5C2C22132D120017C9FF /* JimViewController.xib in Resources */,
 				EF8F5BFF221328F60017C9FF /* LaunchScreen.storyboard in Resources */,
 				7C9655B8222D9B2400A0BA9C /* RyanCollectionViewCell.xib in Resources */,
-				69B9A1CE222D3E4A008BBDCC /* RyansAssets.xcassets in Resources */,
 				EF8F5C2822132CFB0017C9FF /* NilsonViewController.xib in Resources */,
 				EF8F5C2022132A6D0017C9FF /* AlejoViewController.xib in Resources */,
 				EF8F5C1022132A250017C9FF /* FreddyViewController.xib in Resources */,
