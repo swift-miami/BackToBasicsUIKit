@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Zvh-xV-mLk">
-                    <rect key="frame" x="28" y="604" width="319" height="31"/>
+                    <rect key="frame" x="48" y="604" width="279" height="31"/>
                     <color key="minimumTrackTintColor" red="0.98595088720000001" green="0.052376797642005861" blue="0.10486969001624362" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <color key="maximumTrackTintColor" red="0.22419604200000001" green="0.1760223128" blue="0.98595088720000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <connections>
@@ -43,12 +43,12 @@
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="wAH-vD-nYi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="11" id="8eP-mX-hJb"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Zvh-xV-mLk" secondAttribute="trailing" constant="30" id="IsQ-d6-ENG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Zvh-xV-mLk" secondAttribute="trailing" constant="50" id="IsQ-d6-ENG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wAH-vD-nYi" secondAttribute="trailing" id="LQw-hP-ZcV"/>
                 <constraint firstItem="Zvh-xV-mLk" firstAttribute="top" secondItem="Vuu-0j-LLq" secondAttribute="bottom" constant="6" id="M50-GV-pVn"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Zvh-xV-mLk" secondAttribute="bottom" constant="33" id="VNg-zg-6A7"/>
                 <constraint firstItem="Vuu-0j-LLq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Z9Q-OQ-v5a"/>
-                <constraint firstItem="Zvh-xV-mLk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="aun-KN-h93"/>
+                <constraint firstItem="Zvh-xV-mLk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="aun-KN-h93"/>
                 <constraint firstItem="Vuu-0j-LLq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="wAH-vD-nYi" secondAttribute="bottom" constant="10" id="irA-5U-r0B"/>
                 <constraint firstItem="wAH-vD-nYi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="owB-w1-fmD"/>
             </constraints>

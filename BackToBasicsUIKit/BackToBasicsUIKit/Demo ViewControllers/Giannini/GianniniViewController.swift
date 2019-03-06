@@ -5,8 +5,6 @@ class GianniniViewController: UIViewController {
         edgesForExtendedLayout = []
         super.viewDidLoad()
     }
-    override func viewWillAppear(_ animated: Bool) {
-    }
     @IBAction func didTouchButton(_ sender: UIButton) {
         var gianniniVC = UIViewController()
         switch sender.tag {
@@ -35,8 +33,4 @@ class GianniniViewController: UIViewController {
  - UITextField
  - How do you customize: text, font, text color (both text and placeholder), background color, border color.
  - How do you conform to its protocol.
- - UISlider
- - How do you customize it
- - How do you set minimum and maximum values
- - How do you set a value
  */
