@@ -29,7 +29,7 @@ class MainTableViewController: UITableViewController {
 
     private func setupUI() {
         navigationItem.title = "Back to Basics: UIKit"
-
+        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
         tableView.estimatedRowHeight = 64
         tableView.rowHeight = UITableView.automaticDimension
