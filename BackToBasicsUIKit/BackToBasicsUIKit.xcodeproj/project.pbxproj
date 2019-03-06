@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3A727601222ECB19000BD64E /* PauloViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A727600222ECB19000BD64E /* PauloViewModel.swift */; };
+		3AA01B89222F8B74008A68D9 /* PauloHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA01B88222F8B74008A68D9 /* PauloHeaderView.swift */; };
+		3AA01B8B222F8B98008A68D9 /* PauloHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA01B8A222F8B98008A68D9 /* PauloHeaderView.xib */; };
 		EF8F5BF5221328F50017C9FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8F5BF4221328F50017C9FF /* AppDelegate.swift */; };
 		EF8F5BFC221328F60017C9FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF8F5BFB221328F60017C9FF /* Assets.xcassets */; };
 		EF8F5BFF221328F60017C9FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF8F5BFD221328F60017C9FF /* LaunchScreen.storyboard */; };
@@ -35,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		3A727600222ECB19000BD64E /* PauloViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauloViewModel.swift; sourceTree = "<group>"; };
+		3AA01B88222F8B74008A68D9 /* PauloHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauloHeaderView.swift; sourceTree = "<group>"; };
+		3AA01B8A222F8B98008A68D9 /* PauloHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PauloHeaderView.xib; sourceTree = "<group>"; };
 		EF8F5BF1221328F50017C9FF /* BackToBasicsUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackToBasicsUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF8F5BF4221328F50017C9FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF8F5BFB221328F60017C9FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,6 +77,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AA01B87222F8B58008A68D9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3AA01B8C222F8B9C008A68D9 /* Header */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3AA01B8C222F8B9C008A68D9 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				3AA01B88222F8B74008A68D9 /* PauloHeaderView.swift */,
+				3AA01B8A222F8B98008A68D9 /* PauloHeaderView.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		EF8F5BE8221328F50017C9FF = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +214,7 @@
 		EF8F5C39221376AA0017C9FF /* Paulo */ = {
 			isa = PBXGroup;
 			children = (
+				3AA01B87222F8B58008A68D9 /* Cells */,
 				EF8F5C2D22136EA90017C9FF /* PauloViewController.swift */,
 				EF8F5C2E22136EA90017C9FF /* PauloViewController.xib */,
 				3A727600222ECB19000BD64E /* PauloViewModel.swift */,
@@ -268,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF8F5C0C22132A190017C9FF /* ChrisViewController.xib in Resources */,
+				3AA01B8B222F8B98008A68D9 /* PauloHeaderView.xib in Resources */,
 				EF8F5C2C22132D120017C9FF /* JimViewController.xib in Resources */,
 				EF8F5BFF221328F60017C9FF /* LaunchScreen.storyboard in Resources */,
 				EF8F5C2822132CFB0017C9FF /* NilsonViewController.xib in Resources */,
@@ -289,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF8F5C1322132A330017C9FF /* GioViewController.swift in Sources */,
+				3AA01B89222F8B74008A68D9 /* PauloHeaderView.swift in Sources */,
 				EF8F5C0B22132A190017C9FF /* ChrisViewController.swift in Sources */,
 				EF8F5C1B22132A630017C9FF /* GianniniViewController.swift in Sources */,
 				EF8F5C2722132CFB0017C9FF /* NilsonViewController.swift in Sources */,

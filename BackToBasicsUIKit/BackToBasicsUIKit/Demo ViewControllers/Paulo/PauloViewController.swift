@@ -39,6 +39,9 @@ extension PauloViewController {
         tableView.addSubview(refreshControl)
         refreshControl.tintColor = .red
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+
+        let headerNib = UINib(nibName: "PauloHeaderView", bundle: nil)
+        tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: PauloHeaderView.identifier)
     }
 
     // Handle what happens when the refresh control is pulled down to refresh
@@ -71,7 +74,7 @@ extension PauloViewController {
     }
 }
 
-// MARK: - Table View Data Source Delegate Methods
+// MARK: - Data Source Delegate Methods
 
 extension PauloViewController: UITableViewDataSource {
 
@@ -88,7 +91,23 @@ extension PauloViewController: UITableViewDataSource {
         cell.textLabel?.text = "SH"
         return cell
     }
+
+    // MARK: - Use a custom header
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let headerCell = tableView.dequeueReusableHeaderFooterView(withIdentifier: PauloHeaderView.identifier) as? PauloHeaderView else {
+                return nil
+        }
+        headerCell.setTitle("Section \(section)")
+        return headerCell
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return PauloHeaderView.height
+    }
 }
+
+// MARK: - Delegate Methods
 
 extension PauloViewController: UITableViewDelegate {
 
