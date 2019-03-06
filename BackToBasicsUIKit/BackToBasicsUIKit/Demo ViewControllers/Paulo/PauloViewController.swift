@@ -12,27 +12,63 @@ import UIKit
 class PauloViewController: UIViewController {
 
     @IBOutlet weak private var tableView: UITableView!
+    private let refreshControl = UIRefreshControl()
 
     private let viewModel = PauloViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadData()
+    }
+
+}
+
+// MARK: - Private Methods
+
+extension PauloViewController {
+
+    private func setupUI() {
         title = viewModel.title
+
+        // Add the refresh control
+        tableView.addSubview(refreshControl)
+        refreshControl.tintColor = .red
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+    }
+
+    // Handle what happens when the refresh control is pulled down to refresh
+    @objc private func refreshData() {
+        loadData()
+    }
+
+    /// Fetch the data and update the table
+    private func loadData() {
+        refreshControl.beginRefreshing()
+        refreshControl.attributedTitle = NSAttributedString(string: "Loading...")
 
         viewModel.loadData(
             progress: { [weak self] value in
                 // Show the load percentage
-                self?.title = "Loading \(Int(value * 100))%"
+                self?.refreshControl.attributedTitle = NSAttributedString(string: "Loading \(Int(value * 100))%")
             },
             completion: { [weak self] in
                 guard let strongSelf = self else {
                     return
                 }
                 strongSelf.title = strongSelf.viewModel.title
+                strongSelf.refreshControl.endRefreshing()
+                strongSelf.refreshControl.attributedTitle = NSAttributedString(string: "Last updated \(strongSelf.viewModel.lastUpdated)")
                 strongSelf.tableView.reloadData()
         })
     }
 }
+
+// MARK: - Table View Data Source Delegate Methods
 
 extension PauloViewController: UITableViewDataSource {
 
@@ -45,7 +81,9 @@ extension PauloViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = UITableViewCell()
+        cell.textLabel?.text = "SH"
+        return cell
     }
 }
 
