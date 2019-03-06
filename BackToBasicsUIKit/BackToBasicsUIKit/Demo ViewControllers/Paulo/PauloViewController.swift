@@ -63,7 +63,10 @@ extension PauloViewController {
                 strongSelf.title = strongSelf.viewModel.title
                 strongSelf.refreshControl.endRefreshing()
                 strongSelf.refreshControl.attributedTitle = NSAttributedString(string: "Last updated \(strongSelf.viewModel.lastUpdated)")
-                strongSelf.tableView.reloadData()
+
+                // Animate in the rows instead of the standard tableView.reloadData
+                let sections = IndexSet(integersIn: 0...1)
+                strongSelf.tableView.reloadSections(sections, with: .automatic)
         })
     }
 }
@@ -88,5 +91,8 @@ extension PauloViewController: UITableViewDataSource {
 }
 
 extension PauloViewController: UITableViewDelegate {
-    
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
