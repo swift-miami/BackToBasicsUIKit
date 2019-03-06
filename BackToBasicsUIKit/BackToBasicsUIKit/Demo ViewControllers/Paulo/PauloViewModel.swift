@@ -17,7 +17,7 @@ class PauloViewModel {
         let location: String?
         var owner: Bool = false
 
-        enum CodingKeys : String, CodingKey {
+        enum CodingKeys: String, CodingKey {
             case name, location
             case username = "login"
             case avatarURL = "avatar_url"
@@ -34,7 +34,7 @@ class PauloViewModel {
     private var users: Set<User> = Set()
 
     // When the data was last updated
-    private var updated:Date?
+    private var updated: Date?
 
     /// Returns a date formatter to format last updated date
     lazy private var dateFormatter: DateFormatter = {
@@ -146,7 +146,6 @@ extension PauloViewModel {
         }
     }
 
-
     /// Loads a specific user details from the Github API
     ///
     /// - Parameters:
@@ -162,7 +161,7 @@ extension PauloViewModel {
         configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
         let session = URLSession(configuration: configuration)
 
-        let task = session.dataTask(with: url) { (data, response, error) in
+        let task = session.dataTask(with: url) { (data, _, error) in
             guard let data = data, error == nil else {
                 print("Could not load user \(username)")
                 completionHandler(nil)
@@ -174,8 +173,7 @@ extension PauloViewModel {
                     user.owner = true
                 }
                 completionHandler(user)
-            }
-            catch {
+            } catch {
                 print("Could not decode user \(error)")
             }
         }

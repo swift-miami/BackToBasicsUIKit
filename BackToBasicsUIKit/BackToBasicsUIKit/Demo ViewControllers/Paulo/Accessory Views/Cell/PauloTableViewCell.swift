@@ -46,8 +46,7 @@ class PauloTableViewCell: UITableViewCell {
             flagStackView.isHidden = false
             // Super hacky way of showing a different flag for me
             locationFlag.text = (location == "Cayman Islands") ? "🇰🇾" : "🇺🇸"
-        }
-        else {
+        } else {
             flagStackView.isHidden = true
         }
     }
