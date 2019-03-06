@@ -24,26 +24,43 @@ class PauloViewModel {
         }
     }
 
+    // Hard-coded list of usernames and owners from https://github.com/orgs/swift-miami/people
     private let usernames = ["Alejom334", "alfimerino", "chuva-io", "cromanelli", "GianniniCharles", "ivancr", "jslusser", "ryantstone"]
     private let owners = ["ivancr", "chuva-io", "ryantstone"]
+    private var updated:Date?
 
-    public let title = "Paulo's Table View"
-    public var lastUpdated: Date?
+    /// The title for the VC
+    public let title = "Swift Miami Github Members"
+
+    /// The loaded list of users
     public var users = [User]()
 
+    // MARK: - Computed vars
+
+    /// Returns a date formatter
+    lazy private var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm"
+        return formatter
+    }()
+
+    /// The amount of time that has passed since data was loaded
+    public var lastUpdated: String {
+        guard let date = updated else { return "" }
+        return "at \(dateFormatter.string(from: date))"
+    }
+
+    /// The number of sections in the table
     public var totalSections: Int {
         return 2
     }
 
+    // MARK: - Functions
+
+    /// The number of rows in a particular section
     public func numberOfRowsInSection(_ section: Int) -> Int {
-        if section == 0 {
-            let owners = users.filter { $0.owner }
-            return owners.count
-        }
-        else {
-            let plebs = users.filter { !$0.owner }
-            return plebs.count
-        }
+        let ownersOnly = (section == 0)
+        return users.filter { $0.owner == ownersOnly }.count
     }
 }
 
@@ -51,23 +68,34 @@ class PauloViewModel {
 
 extension PauloViewModel {
 
+
+    /// Loads user data from the Github API
+    ///
+    /// - Parameters:
+    ///   - progress: Returns a float 0...1 indicating the current progress
+    ///   - completion: Called when the load operation has completed
     public func loadData(progress: @escaping ((Float) -> Void), completion: @escaping (() -> Void)) {
         var currentIndex = 0
         let totalUsers = usernames.count
 
+        users = []
         usernames.forEach { username in
             loadUser(username) { [weak self] user in
                 DispatchQueue.main.async {
+                    // Add the user
                     if let user = user {
                         self?.users.append(user)
                     }
+
+                    // Update the index
                     currentIndex += 1
 
                     // Update the progress
                     progress(Float(currentIndex) / Float(totalUsers))
 
+                    // Check if we're done
                     if currentIndex == totalUsers {
-                        self?.lastUpdated = Date()
+                        self?.updated = Date()
                         completion()
                     }
                 }
@@ -75,12 +103,23 @@ extension PauloViewModel {
         }
     }
 
+
+    /// Loads a specific user details from the Github API
+    ///
+    /// - Parameters:
+    ///   - username: The user to lookup
+    ///   - completionHandler: Returns a User if everything went smoothly
     private func loadUser(_ username: String, completionHandler: @escaping (User?) -> Void) {
         guard let url = URL(string: "https://api.github.com/users/\(username)") else {
             fatalError("Something terrible has happened")
         }
 
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        // Set up the URL session
+        let configuration = URLSessionConfiguration.default
+        configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
+        let session = URLSession(configuration: configuration)
+
+        let task = session.dataTask(with: url) { (data, response, error) in
             guard let data = data, error == nil else {
                 print("Could not load user \(username)")
                 completionHandler(nil)
