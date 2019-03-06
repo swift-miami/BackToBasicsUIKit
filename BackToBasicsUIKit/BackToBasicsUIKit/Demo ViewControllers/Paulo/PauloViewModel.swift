@@ -13,7 +13,7 @@ class PauloViewModel {
     struct User: Codable {
         let username: String
         let name: String?
-        let avatarURL: String
+        let avatarURL: String?
         let location: String?
         var owner: Bool = false
 
@@ -25,24 +25,31 @@ class PauloViewModel {
     }
 
     // Hard-coded list of usernames and owners from https://github.com/orgs/swift-miami/people
-    private let usernames = ["Alejom334", "alfimerino", "chuva-io", "cromanelli", "GianniniCharles", "ivancr", "jslusser", "ryantstone"]
+    private let usernames = ["Alejom334", "alfimerino", "chuva-io", "cromanelli", "GianniniCharles", "ivancr", "jslusser", "ryantstone", "paulofierro"]
+
+    // Hard-coded list of owners
     private let owners = ["ivancr", "chuva-io", "ryantstone"]
+
+    // When the data was last updated
     private var updated:Date?
+
+    /// Returns a date formatter to format last updated date
+    lazy private var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm"
+        return formatter
+    }()
 
     /// The title for the VC
     public let title = "Swift Miami Github Members"
 
     /// The loaded list of users
     public var users = [User]()
+}
 
-    // MARK: - Computed vars
+// MARK: Public Methods for Table View Data
 
-    /// Returns a date formatter
-    lazy private var dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "hh:mm"
-        return formatter
-    }()
+extension PauloViewModel {
 
     /// The amount of time that has passed since data was loaded
     public var lastUpdated: String {
@@ -55,12 +62,25 @@ class PauloViewModel {
         return 2
     }
 
-    // MARK: - Functions
-
-    /// The number of rows in a particular section
+    /// The number of rows in a given section
     public func numberOfRowsInSection(_ section: Int) -> Int {
-        let ownersOnly = (section == 0)
-        return users.filter { $0.owner == ownersOnly }.count
+        return getUsers(isOwner: (section == 0)).count
+    }
+
+    /// The title for a given section
+    public func titleForSection(_ section: Int) -> String {
+        return (section == 0) ? "Owners" : "Members"
+    }
+
+    /// Returns the user for a given section/row
+    public func userData(for section: Int, row: Int) -> User {
+        let users = getUsers(isOwner: (section == 0))
+        return users[row]
+    }
+
+    /// Returns the list of users that either are or are not owners
+    private func getUsers(isOwner: Bool) -> [User] {
+        return users.filter { $0.owner == isOwner }
     }
 }
 

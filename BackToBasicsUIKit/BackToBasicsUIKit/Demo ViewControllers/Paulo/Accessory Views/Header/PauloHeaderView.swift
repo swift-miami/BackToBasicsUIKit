@@ -19,7 +19,7 @@ class PauloHeaderView: UITableViewHeaderFooterView {
     // Draw a gradient background
     lazy private var backgroundGradient: UIImage? = {
         guard let topColor = UIColor(named: "purple"),
-            let bottomColor = UIColor(named: "blue")?.withAlphaComponent(0.5)
+            let bottomColor = UIColor(named: "blue")?.withAlphaComponent(0.75)
             else { return nil}
 
         let gradientLayer = CAGradientLayer()

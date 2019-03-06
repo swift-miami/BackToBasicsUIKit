@@ -35,11 +35,12 @@ extension PauloViewController {
         refreshControl.tintColor = .red
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
 
-        let headerNib = UINib(nibName: "PauloHeaderView", bundle: nil)
+        // Register cells
+        let headerNib = UINib(nibName: String(describing: PauloHeaderView.self), bundle: nil)
         tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: PauloHeaderView.identifier)
 
-        let cellNib = UINib(nibName: "PauloTableViewCell", bundle: nil)
-        tableView.register(cellNib, forCellReuseIdentifier: "pauloTableViewCell")
+        let cellNib = UINib(nibName: String(describing: PauloTableViewCell.self), bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: PauloTableViewCell.identifier)
     }
 
     // Handle what happens when the refresh control is pulled down to refresh
@@ -84,23 +85,26 @@ extension PauloViewController: UITableViewDataSource {
         return viewModel.numberOfRowsInSection(section)
     }
 
+    // MARK: - Cell Methods
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "pauloTableViewCell",
-                                                     for: indexPath) as? PauloTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PauloTableViewCell.identifier,
+                                                       for: indexPath) as? PauloTableViewCell else {
                                                         fatalError("Could not dequeue user cell")
         }
-        //let account = user.accounts[indexPath.row]
-        //cell.setAccount(account)
+        let user = viewModel.userData(for: indexPath.section, row: indexPath.row)
+        cell.setData(name: user.name ?? user.username, imageURL: user.avatarURL, location: user.location)
         return cell
     }
 
-    // MARK: - Use a custom header
+    // MARK: - Header Methods
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let headerCell = tableView.dequeueReusableHeaderFooterView(withIdentifier: PauloHeaderView.identifier) as? PauloHeaderView else {
-                return nil
+            return nil
         }
-        headerCell.setTitle("Section \(section)")
+
+        headerCell.setTitle(viewModel.titleForSection(section))
         return headerCell
     }
 
