@@ -11,6 +11,9 @@ import UIKit
 
 class PauloViewController: UIViewController {
 
+    // Lets not enter the view model prefix every time
+    typealias User = PauloViewModel.User
+
     @IBOutlet weak private var tableView: UITableView!
     private let refreshControl = UIRefreshControl()
 
@@ -79,6 +82,20 @@ extension PauloViewController {
                 strongSelf.tableView.reloadSections(sections, with: .automatic)
         })
     }
+
+    /// Remove a user and update the table
+    private func deleteUser(at indexPath: IndexPath) {
+        viewModel.removeUser(at: indexPath)
+        tableView.deleteRows(at: [indexPath], with: .fade)
+    }
+
+    /// Make a user an owner and update the table
+    private func ownerifyUser(at indexPath: IndexPath) {
+        viewModel.ownerifyUser(at: indexPath)
+        // FIXME: We could make this nicer by doing a custom animation deleting the row
+        // from one section and inserting the row in another. But we're lazy so...
+        tableView.reloadData()
+    }
 }
 
 // MARK: - Data Source Delegate Methods
@@ -130,29 +147,31 @@ extension PauloViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
-    // Pre-iOS 8 way of handling swiping on cells to delete
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        // Add support for swiping cells to delete them
-//        if editingStyle == .delete {
-//            viewModel.removeUser(at: indexPath)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        }
-//    }
+    // MARK: iOS 7- Cell Actions
 
+    // Pre-iOS 8 way of handling swiping on cells to delete.
+    // This is ignored due to the implementation of editActionsForRowAt below.
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // Add support for swiping cells to delete them
+        if editingStyle == .delete {
+            deleteUser(at: indexPath)
+        }
+    }
+
+    // MARK: iOS 10- Cell Actions
+
+    // Pre-iOS 11 way of handling swiping on cells and have actions.
+    // This is ignored due to the implementation of the leading/trailingSwipAction methods below.
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         // Create action for making a user an owner
-        let ownerAction = UITableViewRowAction(style: .normal, title: "Ownerify") { [weak self] _, indexPath in
-            self?.viewModel.ownerifyUser(at: indexPath)
-            // FIXME: We could make this nicer by doing a custom animation deleting the row
-            // from one section and inserting the row in another. But we're lazy so...
-            tableView.reloadData()
+        let ownerAction = UITableViewRowAction(style: .normal, title: "☝️") { [weak self] _, indexPath in
+            self?.ownerifyUser(at: indexPath)
         }
         ownerAction.backgroundColor = UIColor(named: "blue")
 
         // Create action for deleting a user
-        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { [weak self] _, indexPath in
-            self?.viewModel.removeUser(at: indexPath)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "🔫") { [weak self] _, indexPath in
+            self?.deleteUser(at: indexPath)
         }
 
         // Return the actions for each cell depending on its section
@@ -160,5 +179,26 @@ extension PauloViewController: UITableViewDelegate {
             return [deleteAction]
         }
         return [ownerAction, deleteAction]
+    }
+
+    // MARK: iOS 11+ Cell Actions
+
+    // Add ownerify action on the leading side
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let ownerAction = UIContextualAction(style: .normal, title: "☝️") { [weak self] _, _, completionHandler in
+            self?.ownerifyUser(at: indexPath)
+            completionHandler(true)
+        }
+        ownerAction.backgroundColor = UIColor(named: "blue")
+        return UISwipeActionsConfiguration(actions: [ownerAction])
+    }
+
+    // Add delete action on the trailing side
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "🔫") { [weak self] _, _, completionHandler in
+            self?.deleteUser(at: indexPath)
+            completionHandler(true)
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 }
