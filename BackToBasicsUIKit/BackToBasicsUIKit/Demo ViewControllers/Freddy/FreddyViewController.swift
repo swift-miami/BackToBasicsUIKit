@@ -25,11 +25,15 @@ class FreddyViewController: UIViewController {
     // Stepper 1:
     @IBOutlet weak var stTextView1: UITextView!
     @IBOutlet weak var lable1: UILabel!
-    
     @IBOutlet weak var stepper1: UIStepper!
     
     
     // Stepper 2:
+    @IBOutlet weak var stTextView2: UITextView!
+    @IBOutlet weak var lable2: UILabel!
+    @IBOutlet weak var stepper2: UIStepper!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,11 +67,26 @@ class FreddyViewController: UIViewController {
         stepper1.maximumValue = 20
         stepper1.minimumValue = -5
         lable1.text = "\(self.stepper1.value)" //Displays the starting value of stepper.
+        
+        // Stepper 2: Customization
+        stTextView2.text = "In Steps of 2. Max val: 32. Wraps around! "
+        stepper2.maximumValue = 32
+        stepper2.stepValue = 2
+        stepper2.wraps = true
+        lable2.text = "\(self.stepper2.value)"
+        
     }
     // Stepper 1 Action
     @IBAction func stepperTapped1(_ sender: UIStepper) {
-        // Displays value of stepper in label
+        // Connects stepper to label
         self.lable1.text = "\(self.stepper1.value)"
         
     }
+    // Stepper 2 Action
+    @IBAction func stepperTapped2(_ sender: UIStepper) {
+        // Connects stepper to label
+        self.lable2.text = "\(self.stepper2.value)"
+        
+    }
+    
 }
