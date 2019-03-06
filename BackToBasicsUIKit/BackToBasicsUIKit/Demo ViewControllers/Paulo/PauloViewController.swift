@@ -125,7 +125,40 @@ extension PauloViewController: UITableViewDataSource {
 
 extension PauloViewController: UITableViewDelegate {
 
+    // Handle tapping on cells
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+
+    // Pre-iOS 8 way of handling swiping on cells to delete
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        // Add support for swiping cells to delete them
+//        if editingStyle == .delete {
+//            viewModel.removeUser(at: indexPath)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//        }
+//    }
+
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        // Create action for making a user an owner
+        let ownerAction = UITableViewRowAction(style: .normal, title: "Ownerify") { [weak self] _, indexPath in
+            self?.viewModel.ownerifyUser(at: indexPath)
+            // FIXME: We could make this nicer by doing a custom animation deleting the row
+            // from one section and inserting the row in another. But we're lazy so...
+            tableView.reloadData()
+        }
+        ownerAction.backgroundColor = UIColor(named: "blue")
+
+        // Create action for deleting a user
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { [weak self] _, indexPath in
+            self?.viewModel.removeUser(at: indexPath)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+
+        // Return the actions for each cell depending on its section
+        if indexPath.section == 0 {
+            return [deleteAction]
+        }
+        return [ownerAction, deleteAction]
     }
 }

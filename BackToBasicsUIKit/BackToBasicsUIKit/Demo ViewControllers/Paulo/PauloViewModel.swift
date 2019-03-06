@@ -78,9 +78,18 @@ extension PauloViewModel {
         return users[row]
     }
 
+    /// Deletes a user
     public func removeUser(at indexPath: IndexPath) {
         let user = userData(for: indexPath.section, row: indexPath.row)
         users.remove(user)
+    }
+
+    /// Makes a user an owner
+    public func ownerifyUser(at indexPath: IndexPath) {
+        var user = userData(for: indexPath.section, row: indexPath.row)
+        users.remove(user)
+        user.owner = true
+        users.insert(user)
     }
 }
 
