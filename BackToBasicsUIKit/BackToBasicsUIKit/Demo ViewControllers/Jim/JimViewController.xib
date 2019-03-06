@@ -1,13 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JimViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JimViewController" customModule="BackToBasicsUIKit" customModuleProvider="target">
             <connections>
+                <outlet property="favoriteMonthTextField" destination="Blj-aN-d2W" id="ykY-rt-6Eb"/>
+                <outlet property="progressView" destination="MNk-Nk-tCs" id="UMe-zk-c4j"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,8 +21,54 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MNk-Nk-tCs">
+                    <rect key="frame" x="20" y="120" width="335" height="2"/>
+                    <color key="tintColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </progressView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kuY-Wb-jof" userLabel="Start Progress">
+                    <rect key="frame" x="138" y="172" width="99" height="30"/>
+                    <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Start Progress">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="didTapStartProgress:" destination="-1" eventType="touchUpInside" id="sGc-bM-JXb"/>
+                    </connections>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jN2-QH-sTb">
+                    <rect key="frame" x="108.5" y="302" width="158" height="70.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ciw-GY-Uzd" userLabel="Favorite Month">
+                            <rect key="frame" x="0.0" y="0.0" width="158" height="20.5"/>
+                            <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Click to select month" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Blj-aN-d2W">
+                            <rect key="frame" x="0.0" y="40.5" width="158" height="30"/>
+                            <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="kuY-Wb-jof" firstAttribute="top" secondItem="MNk-Nk-tCs" secondAttribute="bottom" constant="50" id="3ZL-XF-hJ9"/>
+                <constraint firstItem="jN2-QH-sTb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HDj-5e-cTs"/>
+                <constraint firstItem="MNk-Nk-tCs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="Hgv-AF-NKu"/>
+                <constraint firstItem="MNk-Nk-tCs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="JTs-QL-ha8"/>
+                <constraint firstItem="MNk-Nk-tCs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KPN-mY-8gf"/>
+                <constraint firstAttribute="trailing" secondItem="MNk-Nk-tCs" secondAttribute="trailing" constant="20" id="MFt-DR-7lh"/>
+                <constraint firstItem="jN2-QH-sTb" firstAttribute="top" secondItem="kuY-Wb-jof" secondAttribute="bottom" constant="100" id="pLk-ND-UTu"/>
+                <constraint firstItem="kuY-Wb-jof" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tYa-JM-oAV"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138.40000000000001" y="151.57421289355324"/>
         </view>
     </objects>
 </document>

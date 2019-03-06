@@ -10,21 +10,26 @@ import UIKit
 
 class MainTableViewController: UITableViewController {
 
-    private let demoTypes = ["Chris",
+    private let demoTypes = ["Alejo",
+                             "Chris",
                              "Freddy",
                              "Giannini",
                              "Gio",
                              "Iván",
                              "Jim",
                              "Nilson",
-                             "Ryan",
-                             "Paulo"]
+                             "Paulo",
+                             "Ryan"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupUI()
+    }
+
+    private func setupUI() {
         navigationItem.title = "Back to Basics: UIKit"
-        
+
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
         tableView.estimatedRowHeight = 64
         tableView.rowHeight = UITableView.automaticDimension
@@ -48,25 +53,24 @@ class MainTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var demoVC: UIViewController?
+        var demoVC = UIViewController()
         
         switch indexPath.row {
-        case 0: demoVC = ChrisViewController()
-        case 1: demoVC = FreddyViewController()
-        case 2: demoVC = GianniniViewController()
-        case 3: demoVC = GioViewController()
-        case 4: demoVC = IvanViewController()
-        case 5: demoVC = JimViewController()
-        case 6: demoVC = NilsonViewController()
-        case 7: demoVC = RyanViewController()
+        case 0: demoVC = AlejoViewController()
+        case 1: demoVC = ChrisViewController()
+        case 2: demoVC = FreddyViewController()
+        case 3: demoVC = GianniniViewController()
+        case 4: demoVC = GioViewController()
+        case 5: demoVC = IvanViewController()
+        case 6: demoVC = JimViewController()
+        case 7: demoVC = NilsonViewController()
         case 8: demoVC = PauloViewController()
-
+        case 9: demoVC = RyanViewController()
         default:
             assertionFailure("Cell not configured yet")
         }
-
-        guard let vc = demoVC else { return }
-        vc.navigationItem.title = demoTypes[indexPath.row]
-        navigationController?.pushViewController(vc, animated: true)
+        
+        demoVC.navigationItem.title = demoTypes[indexPath.row]
+        navigationController?.pushViewController(demoVC, animated: true)
     }
 }
