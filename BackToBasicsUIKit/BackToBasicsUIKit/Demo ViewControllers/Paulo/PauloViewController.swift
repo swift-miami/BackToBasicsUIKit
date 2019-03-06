@@ -46,6 +46,9 @@ extension PauloViewController {
         //   "using estimation allows you to defer some of the cost of geometry
         //    calculation from load time to scrolling time."
         tableView.estimatedRowHeight = PauloTableViewCell.estimatedRowHeight
+
+        // Center cells on iPad so its a bit more usable
+        tableView.cellLayoutMarginsFollowReadableWidth = true
     }
 
     // Handle what happens when the refresh control is pulled down to refresh
