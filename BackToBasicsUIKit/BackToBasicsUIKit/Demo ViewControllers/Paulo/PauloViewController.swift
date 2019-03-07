@@ -338,7 +338,7 @@ extension PauloViewController: UITableViewDropDelegate {
     private func makeUser(at indexPath: IndexPath, anOwner owner: Bool) {
         var user = viewModel.userData(at: indexPath)
         viewModel.removeUser(at: indexPath)
-        user.owner = false
+        user.owner = owner
         viewModel.addUser(user)
         tableView.reloadData()
     }
