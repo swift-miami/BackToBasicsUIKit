@@ -12,8 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FreddyViewController" customModule="BackToBasicsUIKit" customModuleProvider="target">
             <connections>
-                <outlet property="lable1" destination="qpn-UT-fT4" id="NVT-aP-Ixi"/>
-                <outlet property="lable2" destination="G4m-Rw-Plf" id="AdQ-Ja-QLz"/>
+                <outlet property="label1" destination="qpn-UT-fT4" id="NVT-aP-Ixi"/>
+                <outlet property="label2" destination="G4m-Rw-Plf" id="AdQ-Ja-QLz"/>
                 <outlet property="stackView" destination="bpR-3g-5ma" id="KCR-oJ-nhP"/>
                 <outlet property="stepper1" destination="tH2-bS-ApY" id="0YC-fr-gQr"/>
                 <outlet property="stepper2" destination="I98-p1-JrA" id="yxZ-Z8-QJt"/>
