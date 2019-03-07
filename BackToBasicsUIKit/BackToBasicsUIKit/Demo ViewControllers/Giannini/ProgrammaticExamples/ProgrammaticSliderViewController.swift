@@ -1,3 +1,10 @@
+/*
+- UISlider
+    - How do you customize it
+- How do you set minimum and maximum values
+- How do you set a value
+*/
+
 import UIKit
 import AVFoundation
 
@@ -32,7 +39,6 @@ class ProgrammaticSliderViewController: UIViewController {
         slider.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     @objc func changeSliderValue(_ sender: UISlider) {
-        print("value is \(sender.value)");
         songPlayer?.volume = slider.value
     }
     func setupBackground(){

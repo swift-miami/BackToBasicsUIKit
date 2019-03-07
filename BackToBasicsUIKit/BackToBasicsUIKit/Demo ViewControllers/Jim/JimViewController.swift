@@ -15,8 +15,10 @@ class JimViewController: UIViewController {
     
     @IBOutlet weak var favoriteMonthTextField: UITextField!
     
+    // for UIProgressView
     let progress = Progress(totalUnitCount: 10)
     
+    // for UIPickerView
     let months = ["January",
                   "February",
                   "March",
@@ -30,6 +32,7 @@ class JimViewController: UIViewController {
                   "November",
                   "December"]
     
+    // for UIPickerView
     var selectedMonth: String?
     
     override func viewDidLoad() {
@@ -37,6 +40,7 @@ class JimViewController: UIViewController {
         createMonthPicker()
         createToolbar()
         
+        //Customizations
         progressView.transform = progressView.transform.scaledBy(x: 1, y: 5)
     }
     
@@ -57,26 +61,27 @@ class JimViewController: UIViewController {
         }
     }
     
+    // for UIPickerView
     func createMonthPicker() {
         
         let monthPicker = UIPickerView()
-        monthPicker.delegate = self as! UIPickerViewDelegate
+        monthPicker.delegate = self
         
         favoriteMonthTextField.inputView = monthPicker
         
         //Customizations
-        // monthPicker.backgroundColor = .black
+         monthPicker.backgroundColor = .yellow
     }
     
-    
+    // for UIPickerView
     func createToolbar() {
         
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
         
         // Customizations
-        //    toolBar.barTintColor = .black
-        //    toolBar.tintColor = .white
+        toolBar.barTintColor = .black
+        toolBar.tintColor = .yellow
         
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(JimViewController.dismissKeyboard))
         
@@ -86,7 +91,7 @@ class JimViewController: UIViewController {
         favoriteMonthTextField.inputAccessoryView = toolBar
     }
     
-    
+    // for UIPickerView
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
@@ -99,16 +104,13 @@ extension JimViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         return 1
     }
     
-    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return months.count
     }
     
-    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return months[row]
     }
-    
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
@@ -126,12 +128,8 @@ extension JimViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             label = UILabel()
         }
         
-        //    label.textColor = .yellow
         label.textAlignment = .center
-        //    label.font = UIFont(name: "Menlo-Regular", size: 17)
-        
         label.text = months[row]
-        
         return label
     }
 }
