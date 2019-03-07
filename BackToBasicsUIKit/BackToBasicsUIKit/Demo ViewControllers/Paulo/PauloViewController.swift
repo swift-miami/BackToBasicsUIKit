@@ -6,7 +6,6 @@
     - How to customize it
  */
 
-
 import UIKit
 import MobileCoreServices
 
@@ -272,12 +271,10 @@ extension PauloViewController: UITableViewDropDelegate {
         if tableView.hasActiveDrag {
             if session.items.count > 1 {
                 return UITableViewDropProposal(operation: .cancel)
-            }
-            else {
+            } else {
                 return UITableViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
             }
-        }
-        else {
+        } else {
             return UITableViewDropProposal(operation: .copy, intent: .insertAtDestinationIndexPath)
         }
     }
@@ -304,7 +301,7 @@ extension PauloViewController: UITableViewDropDelegate {
                 // This is hacky as we're ignoring the index path that we want to be dragged to,
                 // but its good enough for the demo. In the real world we would want to ensure
                 // teh destination index path is adhered to.
-                
+
                 // Make a user lose ownership
                 if sourceIndexPath.section == 0 && destinationIndexPath.section == 1 {
                     makeUser(at: sourceIndexPath, anOwner: false)
@@ -313,8 +310,7 @@ extension PauloViewController: UITableViewDropDelegate {
                 else if sourceIndexPath.section == 1 && destinationIndexPath.section == 0 {
                     makeUser(at: sourceIndexPath, anOwner: true)
                 }
-            }
-            else {
+            } else {
                 // Item originate from different app
                 let itemProvider = item.dragItem.itemProvider
 

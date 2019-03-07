@@ -29,7 +29,7 @@ class MainTableViewController: UITableViewController {
 
     private func setupUI() {
         navigationItem.title = "Back to Basics: UIKit"
-        
+
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
         tableView.estimatedRowHeight = 64
         tableView.rowHeight = UITableView.automaticDimension
@@ -51,10 +51,10 @@ class MainTableViewController: UITableViewController {
 
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var demoVC = UIViewController()
-        
+
         switch indexPath.row {
         case 0: demoVC = AlejoViewController()
         case 1: demoVC = ChrisViewController()
@@ -69,7 +69,7 @@ class MainTableViewController: UITableViewController {
         default:
             assertionFailure("Cell not configured yet")
         }
-        
+
         demoVC.navigationItem.title = demoTypes[indexPath.row]
         navigationController?.pushViewController(demoVC, animated: true)
     }
