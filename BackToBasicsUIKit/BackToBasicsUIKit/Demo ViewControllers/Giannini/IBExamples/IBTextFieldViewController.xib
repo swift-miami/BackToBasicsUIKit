@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IBTextFieldViewController" customModule="BackToBasicsUIKit" customModuleProvider="target">
+            <connections>
+                <outlet property="myTextField" destination="nAB-nv-7fl" id="oRs-yJ-Lil"/>
+                <outlet property="myTextFieldResultLabel" destination="mB2-ET-mra" id="Cz1-5v-N58"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type something inside" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nAB-nv-7fl">
+                    <rect key="frame" x="0.0" y="111" width="375" height="30"/>
+                    <color key="backgroundColor" red="0.4187399658" green="0.69068585319999998" blue="0.89813512559999997" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="typedInTextField:" destination="-1" eventType="editingChanged" id="1kx-fp-yHc"/>
+                    </connections>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mB2-ET-mra">
+                    <rect key="frame" x="0.0" y="333.5" width="375" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Characters Max" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bfm-VV-8kw">
+                    <rect key="frame" x="0.0" y="202" width="375" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="nAB-nv-7fl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="91" id="000-bP-EXq"/>
+                <constraint firstItem="mB2-ET-mra" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4xA-71-HnQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nAB-nv-7fl" secondAttribute="trailing" id="CW3-xq-amG"/>
+                <constraint firstItem="nAB-nv-7fl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JWf-6O-Dij"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="nAB-nv-7fl" secondAttribute="bottom" constant="526" id="Jyl-qe-lPQ"/>
+                <constraint firstItem="mB2-ET-mra" firstAttribute="top" secondItem="Bfm-VV-8kw" secondAttribute="bottom" constant="110.5" id="TT3-Jp-NW8"/>
+                <constraint firstItem="Bfm-VV-8kw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TnL-x4-sug"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Bfm-VV-8kw" secondAttribute="trailing" id="aYd-yn-XLo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mB2-ET-mra" secondAttribute="trailing" id="uQ9-me-3LD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="mB2-ET-mra" secondAttribute="bottom" constant="333.5" id="ykN-8q-pgZ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>
