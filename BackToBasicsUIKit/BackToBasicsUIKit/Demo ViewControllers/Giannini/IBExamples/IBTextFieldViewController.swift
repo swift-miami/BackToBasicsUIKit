@@ -18,18 +18,16 @@ class IBTextFieldViewController: UIViewController {
     }
     
     @IBAction func typedInTextField(_ sender: Any) {
-        guard myTextField.text != nil else {return}
-        if myTextField.text!.count > 5 {
-            myTextField.text = "\(myTextField.text!.dropLast())"
-        }
+        guard let text = myTextField.text, text.count > 5 else { return }
+        myTextField.text = "\(text.dropLast())"
     }
 }
  
  extension IBTextFieldViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        guard myTextField.text != nil else {return false}
-        myTextFieldResultLabel.text = "You typed\n\(myTextField.text!)"
+        guard let text = myTextField.text else {return false}
+        myTextFieldResultLabel.text = "You typed\n\(text)"
         myTextField.text = ""
         myTextField.resignFirstResponder()
         return true
