@@ -1,3 +1,12 @@
+/*
+   Gio
+ - UISegmentedControl
+ - How do you customize it.
+ - How do you add an action/target.
+ - UISwitch
+ - How do you customize it.
+ - How do you add an action/target.
+ */
 import UIKit
 
 class GioViewController: UIViewController {
@@ -57,7 +66,7 @@ class GioViewController: UIViewController {
         return textLabel
     }()
     
-    //MARK: - Lifecycle
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -85,11 +94,10 @@ class GioViewController: UIViewController {
             ])
     }
     
-    //MARK: - UIEvent Actions
+    // MARK: - UIEvent Actions
     @objc func segmentValueChanged(_ sender: UISegmentedControl) {
         textLabel.text = quotes[segmentedControl.selectedSegmentIndex]
     }
-    
     
     @objc func switchValueChanged(_ sender: UISwitch) {
         animateDarkTheme(enabled: sender.isOn)
