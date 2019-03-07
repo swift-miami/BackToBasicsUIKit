@@ -14,30 +14,24 @@
 import UIKit
 
 class FreddyViewController: UIViewController {
+    
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var textView1: UITextView!
-    
     @IBOutlet weak var textView2: UITextView!
-   
     @IBOutlet weak var textView3: UITextView!
-    
     @IBOutlet weak var textView4: UITextView!
     
     // Stepper 1:
-    @IBOutlet weak var stTextView1: UITextView!
     @IBOutlet weak var lable1: UILabel!
     @IBOutlet weak var stepper1: UIStepper!
     
-    
     // Stepper 2:
-    @IBOutlet weak var stTextView2: UITextView!
     @IBOutlet weak var lable2: UILabel!
     @IBOutlet weak var stepper2: UIStepper!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // textView 1
         textView1.text = "Text View 1: This view will show a standard green background color and purple text color... BORING!!!"
         textView1.backgroundColor = UIColor.green
@@ -62,14 +56,14 @@ class FreddyViewController: UIViewController {
         textView4.isEditable = false
         textView4.dataDetectorTypes = UIDataDetectorTypes.phoneNumber
         
+        stackView.invalidateIntrinsicContentSize()
+        
         // Stepper 1: Customization
-        stTextView1.text = "In steps of 5. Max Val: 20, Min Val: -5"
         stepper1.maximumValue = 20
         stepper1.minimumValue = -5
         lable1.text = "\(self.stepper1.value)" //Displays the starting value of stepper.
         
         // Stepper 2: Customization
-        stTextView2.text = "In Steps of 2. Max val: 32. Wraps around! "
         stepper2.maximumValue = 32
         stepper2.stepValue = 2
         stepper2.wraps = true
