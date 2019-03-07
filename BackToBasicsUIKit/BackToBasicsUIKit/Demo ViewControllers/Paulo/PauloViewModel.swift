@@ -64,6 +64,11 @@ extension PauloViewModel {
         return users[indexPath.row]
     }
 
+    /// Adds a user
+    public func addUser(_ user: User) {
+        users.insert(user)
+    }
+
     /// Deletes a user
     public func removeUser(at indexPath: IndexPath) {
         let user = userData(at: indexPath)

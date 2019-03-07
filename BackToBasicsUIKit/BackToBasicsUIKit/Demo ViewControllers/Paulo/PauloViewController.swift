@@ -55,6 +55,7 @@ extension PauloViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.dragDelegate = self
+        tableView.dropDelegate = self
     }
 
     // Handle what happens when the refresh control is pulled down to refresh
@@ -87,6 +88,12 @@ extension PauloViewController {
     }
 
     /// Remove a user and update the table
+    private func addUser(_ user: User, in section: Int) {
+        viewModel.addUser(user)
+        tableView.reloadSections(IndexSet([section]), with: .automatic)
+    }
+
+    /// Remove a user and update the table
     private func deleteUser(at indexPath: IndexPath) {
         viewModel.removeUser(at: indexPath)
         tableView.deleteRows(at: [indexPath], with: .fade)
@@ -101,7 +108,7 @@ extension PauloViewController {
     }
 }
 
-// MARK: - Data Source Delegate Methods
+// MARK: - Data Source Methods
 
 extension PauloViewController: UITableViewDataSource {
 
@@ -247,5 +254,96 @@ extension PauloViewController: UITableViewDragDelegate {
 
         let dragItem = UIDragItem(itemProvider: itemProvider)
         return [dragItem]
+    }
+}
+
+// MARK: - Drop Methods
+
+extension PauloViewController: UITableViewDropDelegate {
+
+    /// Check if we can handle the item being dragged in
+    func tableView(_ tableView: UITableView, canHandle session: UIDropSession) -> Bool {
+        return User.canHandle(session)
+    }
+
+    /// Figure out the type of drop proposal depending
+    func tableView(_ tableView: UITableView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UITableViewDropProposal {
+
+        if tableView.hasActiveDrag {
+            if session.items.count > 1 {
+                return UITableViewDropProposal(operation: .cancel)
+            }
+            else {
+                return UITableViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
+            }
+        }
+        else {
+            return UITableViewDropProposal(operation: .copy, intent: .insertAtDestinationIndexPath)
+        }
+    }
+
+    /// Handle the actual drop
+    func tableView(_ tableView: UITableView, performDropWith coordinator: UITableViewDropCoordinator) {
+        let destinationIndexPath: IndexPath
+
+        // If we know where we're going, lets use that
+        if let indexPath = coordinator.destinationIndexPath {
+            destinationIndexPath = indexPath
+        }
+        // Otherwise we will force drop ourselves at the bottom of the section
+        else {
+            let totalRows = tableView.numberOfRows(inSection: 0)
+            destinationIndexPath = IndexPath(row: totalRows, section: 0)
+        }
+
+        // Loop through the items that are being dragged
+        for item in coordinator.items {
+
+            // Item originated from same app
+            if let sourceIndexPath = item.sourceIndexPath {
+                // This is hacky as we're ignoring the index path that we want to be dragged to,
+                // but its good enough for the demo. In the real world we would want to ensure
+                // teh destination index path is adhered to.
+                
+                // Make a user lose ownership
+                if sourceIndexPath.section == 0 && destinationIndexPath.section == 1 {
+                    makeUser(at: sourceIndexPath, anOwner: false)
+                }
+                // Make a user beceome an owner
+                else if sourceIndexPath.section == 1 && destinationIndexPath.section == 0 {
+                    makeUser(at: sourceIndexPath, anOwner: true)
+                }
+            }
+            else {
+                // Item originate from different app
+                let itemProvider = item.dragItem.itemProvider
+
+                itemProvider.loadObject(ofClass: NSString.self) { [weak self] (string, error) in
+                    guard error == nil else { return }
+                    // If we got a valid string, lets create a user
+                    if let string = string as? String {
+                        // Create the user
+                        var user = User(username: string, avatarURL: "https://secure.meetupstatic.com/photos/event/e/a/b/600_469023755.jpeg")
+                        // Make them an owner if the destination section is the owner section
+                        if destinationIndexPath.section == 0 {
+                            user.owner = true
+                        }
+                        // Add the user and reload the sectuib
+                        DispatchQueue.main.async {
+                            self?.addUser(user, in: destinationIndexPath.section)
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /// Swaps the ownership flag for a user
+    private func makeUser(at indexPath: IndexPath, anOwner owner: Bool) {
+        var user = viewModel.userData(at: indexPath)
+        viewModel.removeUser(at: indexPath)
+        user.owner = false
+        viewModel.addUser(user)
+        tableView.reloadData()
     }
 }

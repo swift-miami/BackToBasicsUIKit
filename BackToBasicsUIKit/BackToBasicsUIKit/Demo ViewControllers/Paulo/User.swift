@@ -6,7 +6,7 @@
 //  Copyright © 2019 SwiftMiami. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct User: Codable, Hashable {
     let username: String
@@ -19,5 +19,21 @@ struct User: Codable, Hashable {
         case name, location
         case username = "login"
         case avatarURL = "avatar_url"
+    }
+
+    init(username: String, avatarURL: String?) {
+        self.username = username
+        self.name = nil
+        self.avatarURL = avatarURL
+        self.location = nil
+    }
+}
+
+extension User {
+
+    /// Check if we can handle drops of this type of item
+    public static func canHandle(_ session: UIDropSession) -> Bool {
+        let canLoad = session.canLoadObjects(ofClass: NSString.self)
+        return canLoad
     }
 }
