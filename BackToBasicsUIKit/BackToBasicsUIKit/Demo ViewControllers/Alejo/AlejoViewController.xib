@@ -1,13 +1,21 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlejoViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlejoViewController" customModule="BackToBasicsUIKit" customModuleProvider="target">
             <connections>
+                <outlet property="imageView" destination="KOR-E3-2Sr" id="dlk-1Y-COH"/>
+                <outlet property="label1" destination="q9N-zM-iIM" id="MTy-gW-CK2"/>
+                <outlet property="label2" destination="wAk-e6-XLp" id="RR5-hA-a9f"/>
+                <outlet property="label3" destination="RrF-7P-zCR" id="qhG-75-KMw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,7 +23,47 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KOR-E3-2Sr">
+                    <rect key="frame" x="59.5" y="99" width="256" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="L8r-cS-n4E"/>
+                        <constraint firstAttribute="width" constant="256" id="z5o-9t-RB3"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9N-zM-iIM">
+                    <rect key="frame" x="56.5" y="323" width="262.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAk-e6-XLp">
+                    <rect key="frame" x="56.5" y="388" width="262.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrF-7P-zCR">
+                    <rect key="frame" x="56.5" y="452.5" width="262.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="KOR-E3-2Sr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="79" id="2QD-9G-frx"/>
+                <constraint firstItem="RrF-7P-zCR" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.7" id="5Iz-VS-BIX"/>
+                <constraint firstItem="wAk-e6-XLp" firstAttribute="top" secondItem="q9N-zM-iIM" secondAttribute="bottom" constant="44" id="7FQ-kd-ME0"/>
+                <constraint firstItem="wAk-e6-XLp" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="89q-ko-8kr"/>
+                <constraint firstItem="RrF-7P-zCR" firstAttribute="top" secondItem="wAk-e6-XLp" secondAttribute="bottom" constant="44" id="BVm-Vd-aZg"/>
+                <constraint firstItem="q9N-zM-iIM" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="TVM-HT-6Vo"/>
+                <constraint firstItem="KOR-E3-2Sr" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="W81-hG-cew"/>
+                <constraint firstItem="q9N-zM-iIM" firstAttribute="top" secondItem="KOR-E3-2Sr" secondAttribute="bottom" constant="96" id="XW4-oh-HUB"/>
+                <constraint firstItem="q9N-zM-iIM" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.7" id="ap4-c7-DdD"/>
+                <constraint firstItem="RrF-7P-zCR" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="lyS-96-30h"/>
+                <constraint firstItem="wAk-e6-XLp" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.7" id="xej-QH-roZ"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
