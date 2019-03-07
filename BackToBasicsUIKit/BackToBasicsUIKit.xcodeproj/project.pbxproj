@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A727601222ECB19000BD64E /* PauloViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A727600222ECB19000BD64E /* PauloViewModel.swift */; };
+		3AA01B89222F8B74008A68D9 /* PauloHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA01B88222F8B74008A68D9 /* PauloHeaderView.swift */; };
+		3AA01B8B222F8B98008A68D9 /* PauloHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA01B8A222F8B98008A68D9 /* PauloHeaderView.xib */; };
+		3AA01B90222F91F3008A68D9 /* PauloTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA01B8E222F91F3008A68D9 /* PauloTableViewCell.swift */; };
+		3AA01B91222F91F3008A68D9 /* PauloTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA01B8F222F91F3008A68D9 /* PauloTableViewCell.xib */; };
+		3AA0B2AC223053CA0013C34C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA0B2AB223053CA0013C34C /* User.swift */; };
 		7C9655B4222D93FD00A0BA9C /* JsonPlaceholderNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9655B3222D93FD00A0BA9C /* JsonPlaceholderNetworking.swift */; };
 		7C9655B7222D9B2400A0BA9C /* RyanCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9655B5222D9B2400A0BA9C /* RyanCollectionViewCell.swift */; };
 		7C9655B8222D9B2400A0BA9C /* RyanCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C9655B6222D9B2400A0BA9C /* RyanCollectionViewCell.xib */; };
@@ -25,8 +31,6 @@
 		EF8F5C1422132A330017C9FF /* GioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF8F5C1222132A330017C9FF /* GioViewController.xib */; };
 		EF8F5C1722132A4A0017C9FF /* RyanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8F5C1522132A4A0017C9FF /* RyanViewController.swift */; };
 		EF8F5C1822132A4A0017C9FF /* RyanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF8F5C1622132A4A0017C9FF /* RyanViewController.xib */; };
-		EF8F5C1B22132A630017C9FF /* GianniniViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8F5C1922132A630017C9FF /* GianniniViewController.swift */; };
-		EF8F5C1C22132A630017C9FF /* GianniniViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF8F5C1A22132A630017C9FF /* GianniniViewController.xib */; };
 		EF8F5C1F22132A6D0017C9FF /* AlejoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8F5C1D22132A6D0017C9FF /* AlejoViewController.swift */; };
 		EF8F5C2022132A6D0017C9FF /* AlejoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF8F5C1E22132A6D0017C9FF /* AlejoViewController.xib */; };
 		EF8F5C2322132CEC0017C9FF /* IvanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8F5C2122132CEC0017C9FF /* IvanViewController.swift */; };
@@ -36,9 +40,25 @@
 		EF8F5C2F22136EA90017C9FF /* PauloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8F5C2D22136EA90017C9FF /* PauloViewController.swift */; };
 		EF8F5C3022136EA90017C9FF /* PauloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF8F5C2E22136EA90017C9FF /* PauloViewController.xib */; };
 		EFF5949C222F7C8C00142FEB /* PagedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF5949B222F7C8C00142FEB /* PagedViewController.swift */; };
+		F6F83B122231904C00CFDF42 /* ProgrammaticTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F83B062231904C00CFDF42 /* ProgrammaticTextFieldViewController.swift */; };
+		F6F83B132231904C00CFDF42 /* ProgrammaticSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F83B072231904C00CFDF42 /* ProgrammaticSliderViewController.swift */; };
+		F6F83B142231904C00CFDF42 /* IBSliderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6F83B092231904C00CFDF42 /* IBSliderVC.xib */; };
+		F6F83B152231904C00CFDF42 /* IBTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F83B0A2231904C00CFDF42 /* IBTextFieldViewController.swift */; };
+		F6F83B162231904C00CFDF42 /* IBSliderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F83B0B2231904C00CFDF42 /* IBSliderVC.swift */; };
+		F6F83B172231904C00CFDF42 /* IBTextFieldViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6F83B0C2231904C00CFDF42 /* IBTextFieldViewController.xib */; };
+		F6F83B182231904C00CFDF42 /* kaiEngelMoonlight.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F6F83B0E2231904C00CFDF42 /* kaiEngelMoonlight.mp3 */; };
+		F6F83B192231904C00CFDF42 /* source.txt in Resources */ = {isa = PBXBuildFile; fileRef = F6F83B0F2231904C00CFDF42 /* source.txt */; };
+		F6F83B1A2231904C00CFDF42 /* GianniniViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6F83B102231904C00CFDF42 /* GianniniViewController.xib */; };
+		F6F83B1B2231904C00CFDF42 /* GianniniViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F83B112231904C00CFDF42 /* GianniniViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A727600222ECB19000BD64E /* PauloViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauloViewModel.swift; sourceTree = "<group>"; };
+		3AA01B88222F8B74008A68D9 /* PauloHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauloHeaderView.swift; sourceTree = "<group>"; };
+		3AA01B8A222F8B98008A68D9 /* PauloHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PauloHeaderView.xib; sourceTree = "<group>"; };
+		3AA01B8E222F91F3008A68D9 /* PauloTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauloTableViewCell.swift; sourceTree = "<group>"; };
+		3AA01B8F222F91F3008A68D9 /* PauloTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PauloTableViewCell.xib; sourceTree = "<group>"; };
+		3AA0B2AB223053CA0013C34C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = "BackToBasicsUIKit/Demo ViewControllers/Paulo/User.swift"; sourceTree = SOURCE_ROOT; };
 		7C9655B3222D93FD00A0BA9C /* JsonPlaceholderNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonPlaceholderNetworking.swift; sourceTree = "<group>"; };
 		7C9655B5222D9B2400A0BA9C /* RyanCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RyanCollectionViewCell.swift; sourceTree = "<group>"; };
 		7C9655B6222D9B2400A0BA9C /* RyanCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RyanCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -59,8 +79,6 @@
 		EF8F5C1222132A330017C9FF /* GioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GioViewController.xib; sourceTree = "<group>"; };
 		EF8F5C1522132A4A0017C9FF /* RyanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RyanViewController.swift; sourceTree = "<group>"; };
 		EF8F5C1622132A4A0017C9FF /* RyanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RyanViewController.xib; sourceTree = "<group>"; };
-		EF8F5C1922132A630017C9FF /* GianniniViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GianniniViewController.swift; sourceTree = "<group>"; };
-		EF8F5C1A22132A630017C9FF /* GianniniViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GianniniViewController.xib; sourceTree = "<group>"; };
 		EF8F5C1D22132A6D0017C9FF /* AlejoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlejoViewController.swift; sourceTree = "<group>"; };
 		EF8F5C1E22132A6D0017C9FF /* AlejoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlejoViewController.xib; sourceTree = "<group>"; };
 		EF8F5C2122132CEC0017C9FF /* IvanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IvanViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +88,16 @@
 		EF8F5C2D22136EA90017C9FF /* PauloViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauloViewController.swift; sourceTree = "<group>"; };
 		EF8F5C2E22136EA90017C9FF /* PauloViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PauloViewController.xib; sourceTree = "<group>"; };
 		EFF5949B222F7C8C00142FEB /* PagedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagedViewController.swift; sourceTree = "<group>"; };
+		F6F83B062231904C00CFDF42 /* ProgrammaticTextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgrammaticTextFieldViewController.swift; sourceTree = "<group>"; };
+		F6F83B072231904C00CFDF42 /* ProgrammaticSliderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgrammaticSliderViewController.swift; sourceTree = "<group>"; };
+		F6F83B092231904C00CFDF42 /* IBSliderVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IBSliderVC.xib; sourceTree = "<group>"; };
+		F6F83B0A2231904C00CFDF42 /* IBTextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBTextFieldViewController.swift; sourceTree = "<group>"; };
+		F6F83B0B2231904C00CFDF42 /* IBSliderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBSliderVC.swift; sourceTree = "<group>"; };
+		F6F83B0C2231904C00CFDF42 /* IBTextFieldViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IBTextFieldViewController.xib; sourceTree = "<group>"; };
+		F6F83B0E2231904C00CFDF42 /* kaiEngelMoonlight.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kaiEngelMoonlight.mp3; sourceTree = "<group>"; };
+		F6F83B0F2231904C00CFDF42 /* source.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = source.txt; sourceTree = "<group>"; };
+		F6F83B102231904C00CFDF42 /* GianniniViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GianniniViewController.xib; sourceTree = "<group>"; };
+		F6F83B112231904C00CFDF42 /* GianniniViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GianniniViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +111,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AA01B87222F8B58008A68D9 /* Accessory Views */ = {
+			isa = PBXGroup;
+			children = (
+				3AA01B8C222F8B9C008A68D9 /* Header */,
+				3AA01B8D222F91D1008A68D9 /* Cell */,
+				3AA0B2AB223053CA0013C34C /* User.swift */,
+			);
+			path = "Accessory Views";
+			sourceTree = "<group>";
+		};
+		3AA01B8C222F8B9C008A68D9 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				3AA01B88222F8B74008A68D9 /* PauloHeaderView.swift */,
+				3AA01B8A222F8B98008A68D9 /* PauloHeaderView.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		3AA01B8D222F91D1008A68D9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3AA01B8E222F91F3008A68D9 /* PauloTableViewCell.swift */,
+				3AA01B8F222F91F3008A68D9 /* PauloTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		EF8F5BE8221328F50017C9FF = {
 			isa = PBXGroup;
 			children = (
@@ -118,7 +174,7 @@
 				EF8F5C312213765F0017C9FF /* Alejo */,
 				EF8F5C32221376680017C9FF /* Chris */,
 				EF8F5C33221376710017C9FF /* Freddy */,
-				EF8F5C34221376790017C9FF /* Giannini */,
+				F6F83B042231904C00CFDF42 /* Giannini */,
 				EF8F5C35221376860017C9FF /* Gio */,
 				EF8F5C362213768D0017C9FF /* Ivan */,
 				EF8F5C37221376960017C9FF /* Jim */,
@@ -154,15 +210,6 @@
 				EF8F5C0E22132A250017C9FF /* FreddyViewController.xib */,
 			);
 			path = Freddy;
-			sourceTree = "<group>";
-		};
-		EF8F5C34221376790017C9FF /* Giannini */ = {
-			isa = PBXGroup;
-			children = (
-				EF8F5C1922132A630017C9FF /* GianniniViewController.swift */,
-				EF8F5C1A22132A630017C9FF /* GianniniViewController.xib */,
-			);
-			path = Giannini;
 			sourceTree = "<group>";
 		};
 		EF8F5C35221376860017C9FF /* Gio */ = {
@@ -206,8 +253,10 @@
 		EF8F5C39221376AA0017C9FF /* Paulo */ = {
 			isa = PBXGroup;
 			children = (
+				3AA01B87222F8B58008A68D9 /* Accessory Views */,
 				EF8F5C2D22136EA90017C9FF /* PauloViewController.swift */,
 				EF8F5C2E22136EA90017C9FF /* PauloViewController.xib */,
+				3A727600222ECB19000BD64E /* PauloViewModel.swift */,
 			);
 			path = Paulo;
 			sourceTree = "<group>";
@@ -222,6 +271,47 @@
 				7C9655B6222D9B2400A0BA9C /* RyanCollectionViewCell.xib */,
 			);
 			path = Ryan;
+			sourceTree = "<group>";
+		};
+		F6F83B042231904C00CFDF42 /* Giannini */ = {
+			isa = PBXGroup;
+			children = (
+				F6F83B052231904C00CFDF42 /* ProgrammaticExamples */,
+				F6F83B082231904C00CFDF42 /* IBExamples */,
+				F6F83B0D2231904C00CFDF42 /* Audio */,
+				F6F83B102231904C00CFDF42 /* GianniniViewController.xib */,
+				F6F83B112231904C00CFDF42 /* GianniniViewController.swift */,
+			);
+			path = Giannini;
+			sourceTree = "<group>";
+		};
+		F6F83B052231904C00CFDF42 /* ProgrammaticExamples */ = {
+			isa = PBXGroup;
+			children = (
+				F6F83B062231904C00CFDF42 /* ProgrammaticTextFieldViewController.swift */,
+				F6F83B072231904C00CFDF42 /* ProgrammaticSliderViewController.swift */,
+			);
+			path = ProgrammaticExamples;
+			sourceTree = "<group>";
+		};
+		F6F83B082231904C00CFDF42 /* IBExamples */ = {
+			isa = PBXGroup;
+			children = (
+				F6F83B092231904C00CFDF42 /* IBSliderVC.xib */,
+				F6F83B0A2231904C00CFDF42 /* IBTextFieldViewController.swift */,
+				F6F83B0B2231904C00CFDF42 /* IBSliderVC.swift */,
+				F6F83B0C2231904C00CFDF42 /* IBTextFieldViewController.xib */,
+			);
+			path = IBExamples;
+			sourceTree = "<group>";
+		};
+		F6F83B0D2231904C00CFDF42 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				F6F83B0E2231904C00CFDF42 /* kaiEngelMoonlight.mp3 */,
+				F6F83B0F2231904C00CFDF42 /* source.txt */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,16 +373,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF8F5C0C22132A190017C9FF /* ChrisViewController.xib in Resources */,
+				F6F83B1A2231904C00CFDF42 /* GianniniViewController.xib in Resources */,
+				3AA01B8B222F8B98008A68D9 /* PauloHeaderView.xib in Resources */,
 				EF8F5C2C22132D120017C9FF /* JimViewController.xib in Resources */,
 				EF8F5BFF221328F60017C9FF /* LaunchScreen.storyboard in Resources */,
+				F6F83B182231904C00CFDF42 /* kaiEngelMoonlight.mp3 in Resources */,
 				7C9655B8222D9B2400A0BA9C /* RyanCollectionViewCell.xib in Resources */,
 				EF8F5C2022132A6D0017C9FF /* AlejoViewController.xib in Resources */,
 				EF8F5C1022132A250017C9FF /* FreddyViewController.xib in Resources */,
-				EF8F5C1C22132A630017C9FF /* GianniniViewController.xib in Resources */,
+				F6F83B192231904C00CFDF42 /* source.txt in Resources */,
+				3AA01B91222F91F3008A68D9 /* PauloTableViewCell.xib in Resources */,
 				EF8F5C3022136EA90017C9FF /* PauloViewController.xib in Resources */,
 				EF8F5C1422132A330017C9FF /* GioViewController.xib in Resources */,
 				EF8F5C1822132A4A0017C9FF /* RyanViewController.xib in Resources */,
 				D3BEC0132231A83500DE4678 /* SpinnerVC.xib in Resources */,
+				F6F83B172231904C00CFDF42 /* IBTextFieldViewController.xib in Resources */,
+				F6F83B142231904C00CFDF42 /* IBSliderVC.xib in Resources */,
 				EF8F5BFC221328F60017C9FF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,21 +400,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AA01B90222F91F3008A68D9 /* PauloTableViewCell.swift in Sources */,
 				EF8F5C1322132A330017C9FF /* GioViewController.swift in Sources */,
+				3AA01B89222F8B74008A68D9 /* PauloHeaderView.swift in Sources */,
 				EF8F5C0B22132A190017C9FF /* ChrisViewController.swift in Sources */,
 				D3BEC0122231A83500DE4678 /* SpinnerVC.swift in Sources */,
 				EF8F5C1B22132A630017C9FF /* GianniniViewController.swift in Sources */,
 				EF8F5C2722132CFB0017C9FF /* NilsonViewController.swift in Sources */,
 				EF8F5C2322132CEC0017C9FF /* IvanViewController.swift in Sources */,
+				3AA0B2AC223053CA0013C34C /* User.swift in Sources */,
 				7C9655B4222D93FD00A0BA9C /* JsonPlaceholderNetworking.swift in Sources */,
 				EF8F5C072213296C0017C9FF /* MainTableViewController.swift in Sources */,
+				F6F83B152231904C00CFDF42 /* IBTextFieldViewController.swift in Sources */,
+				F6F83B132231904C00CFDF42 /* ProgrammaticSliderViewController.swift in Sources */,
+				F6F83B1B2231904C00CFDF42 /* GianniniViewController.swift in Sources */,
 				EF8F5C0F22132A250017C9FF /* FreddyViewController.swift in Sources */,
+				F6F83B162231904C00CFDF42 /* IBSliderVC.swift in Sources */,
 				EF8F5C2B22132D120017C9FF /* JimViewController.swift in Sources */,
 				EF8F5C2F22136EA90017C9FF /* PauloViewController.swift in Sources */,
+				3A727601222ECB19000BD64E /* PauloViewModel.swift in Sources */,
 				7C9655B7222D9B2400A0BA9C /* RyanCollectionViewCell.swift in Sources */,
 				EF8F5C1722132A4A0017C9FF /* RyanViewController.swift in Sources */,
 				EF8F5C1F22132A6D0017C9FF /* AlejoViewController.swift in Sources */,
 				D3BEC0152231BAF200DE4678 /* PresentationsVC.swift in Sources */,
+				F6F83B122231904C00CFDF42 /* ProgrammaticTextFieldViewController.swift in Sources */,
 				EFF5949C222F7C8C00142FEB /* PagedViewController.swift in Sources */,
 				EF8F5BF5221328F50017C9FF /* AppDelegate.swift in Sources */,
 			);
