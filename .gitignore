@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-*.xcuserstate
-=======
+*.xcbkptlist
 .DS_Store
->>>>>>> Ignore DS_Store
 *.xcuserstate
+*.xcuserdatad
