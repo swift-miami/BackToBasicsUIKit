@@ -9,19 +9,19 @@ import UIKit
 
 class IBSliderVC: UIViewController {
     
-    @IBOutlet var drakeView: UIImageView!
+    @IBOutlet var drakeImageView: UIImageView!
     
-    @IBOutlet var ibSliderLabel: UILabel!
+    @IBOutlet var lbl0To100: UILabel!
     
     @IBAction func didMoveSlider(_ sender: UISlider) {
-        ibSliderLabel.text = "0 to \(Int(sender.value)) real quick"
-        drakeView.alpha = CGFloat(sender.value / 100)
+        lbl0To100.text = "0 to \(Int(sender.value)) real quick"
+        drakeImageView.alpha = CGFloat(sender.value / 100)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         edgesForExtendedLayout = []
-        drakeView.alpha = 0
-        drakeView.layer.cornerRadius = 3
+        drakeImageView.alpha = 0
+        drakeImageView.layer.cornerRadius = 3
     }
 }

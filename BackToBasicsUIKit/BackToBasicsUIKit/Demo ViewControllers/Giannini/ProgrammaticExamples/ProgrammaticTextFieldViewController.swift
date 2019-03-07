@@ -24,21 +24,21 @@ class ProgrammaticTextFieldViewController: UIViewController, UITextFieldDelegate
         proTextField.delegate = self
         proTextField.addTarget(self, action: #selector(self.textFieldDidEndEditing(_:)), for: UIControl.Event.editingDidEnd)
         proTextField.placeholder = "Type a message..."
-        proTextField.backgroundColor = UIColor.orange
-        proTextField.textColor = UIColor.purple
+        proTextField.backgroundColor = .orange
+        proTextField.textColor = .purple
         proTextField.layer.borderWidth = 3
         proTextField.layer.borderColor = UIColor.purple.cgColor
         proTextField.font = UIFont (name: "Menlo-Bold", size: 20)
-        
+        proTextField.textAlignment = .center
         guard  proTextField.placeholder != nil else { return }
         proTextField.attributedPlaceholder = NSAttributedString(string: proTextField.placeholder!,
                                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.blue])
     }
 
-    
     func layoutConstraints() {
         proTextField.translatesAutoresizingMaskIntoConstraints = false
-        proTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        proTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        proTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         proTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
         proTextField.widthAnchor.constraint(equalToConstant: 250).isActive = true
         proTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true

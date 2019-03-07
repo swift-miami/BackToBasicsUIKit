@@ -12,8 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IBSliderVC" customModule="BackToBasicsUIKit" customModuleProvider="target">
             <connections>
-                <outlet property="drakeView" destination="wAH-vD-nYi" id="5tq-8L-NwW"/>
-                <outlet property="ibSliderLabel" destination="Vuu-0j-LLq" id="IAt-hM-ZIF"/>
+                <outlet property="drakeImageView" destination="wAH-vD-nYi" id="5tq-8L-NwW"/>
+                <outlet property="lbl0To100" destination="Vuu-0j-LLq" id="IAt-hM-ZIF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

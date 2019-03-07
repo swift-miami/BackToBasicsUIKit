@@ -11,10 +11,12 @@
 import UIKit
 
 class GianniniViewController: UIViewController {
+    
     override func viewDidLoad() {
         edgesForExtendedLayout = []
         super.viewDidLoad()
     }
+    
     @IBAction func didTouchButton(_ sender: UIButton) {
         var gianniniVC = UIViewController()
         switch sender.tag {
@@ -29,6 +31,7 @@ class GianniniViewController: UIViewController {
         case 3:
             gianniniVC = IBTextFieldViewController()
             gianniniVC.navigationItem.title = "IB TextField"
+            
         case 4:
             gianniniVC = ProgrammaticTextFieldViewController()
             gianniniVC.navigationItem.title = "Programmatic TextField"
@@ -38,9 +41,3 @@ class GianniniViewController: UIViewController {
         navigationController?.pushViewController(gianniniVC, animated: true)
     }
 }
-
-/*
- - UITextField
- - How do you customize: text, font, text color (both text and placeholder), background color, border color.
- - How do you conform to its protocol.
- */

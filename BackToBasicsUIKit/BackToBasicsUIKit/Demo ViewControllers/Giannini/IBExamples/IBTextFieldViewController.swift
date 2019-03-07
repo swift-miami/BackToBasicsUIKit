@@ -6,7 +6,6 @@
  
 import UIKit
 
- 
 class IBTextFieldViewController: UIViewController {
     
     @IBOutlet var myTextField: UITextField!
