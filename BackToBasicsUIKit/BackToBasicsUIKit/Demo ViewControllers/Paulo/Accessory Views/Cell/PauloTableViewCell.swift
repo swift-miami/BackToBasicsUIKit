@@ -58,8 +58,10 @@ class PauloTableViewCell: UITableViewCell {
 
     /// Load the user's avatar and display it
     private func loadImage(imageURL: String?) {
-        guard let imageURL = imageURL,
-            let url = URL(string: imageURL) else { return }
+        guard let imageURL = imageURL, let url = URL(string: imageURL) else {
+            imageView?.image = nil
+            return
+        }
 
         activityIndicator.startAnimating()
 
