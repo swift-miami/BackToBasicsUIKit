@@ -87,12 +87,17 @@ extension ChrisViewController {
         let anotherButton = UIButton(type: .custom)
         anotherButton.layer.borderColor = UIColor.blue.cgColor
         anotherButton.layer.borderWidth = 1.0
+        anotherButton.layer.cornerRadius = 5.0
         anotherButton.setTitle("New Button", for: .normal)
         anotherButton.setTitleColor(.blue, for: .normal)
         
         //To add an Image to the button use setImage function
         let swiftMiamiLogo = UIImage(named: "SwiftMiamiLogo")
         anotherButton.setImage(swiftMiamiLogo, for: .normal)
+        
+        //Button's font can be changed
+        let font = UIFont(name: "AmericanTypewriter", size: UIFont.systemFontSize)
+        anotherButton.titleLabel?.font = font
         
         //To adjust the position of the Image and Title you assign imageEdgeInsets & titleEdgeInsets vars.
         anotherButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 140)
