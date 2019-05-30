@@ -19,7 +19,8 @@ class MainTableViewController: UITableViewController {
                              "Jim",
                              "Nilson",
                              "Paulo",
-                             "Ryan"]
+                             "Ryan",
+                             "Jimmy"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,11 +67,19 @@ class MainTableViewController: UITableViewController {
         case 7: demoVC = NilsonViewController()
         case 8: demoVC = PauloViewController()
         case 9: demoVC = RyanViewController()
+        case 10: demoVC = JimmyViewController()
+            
         default:
             assertionFailure("Cell not configured yet")
         }
-
+        
+        if indexPath.row == 10 {
+            let storyboard = UIStoryboard(name: "Jimmy", bundle: nil)
+            let destination = storyboard.instantiateViewController(withIdentifier: "JimmyViewController") as! JimmyViewController
+            navigationController?.pushViewController(destination, animated: true)
+        } else {
         demoVC.navigationItem.title = demoTypes[indexPath.row]
         navigationController?.pushViewController(demoVC, animated: true)
+        }
     }
 }
